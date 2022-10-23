@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -98,7 +98,7 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					BF6745B32902DBB300B9818C = {
-						CreatedOnToolsVersion = 14.0;
+						CreatedOnToolsVersion = 12;
 					};
 				};
 			};
