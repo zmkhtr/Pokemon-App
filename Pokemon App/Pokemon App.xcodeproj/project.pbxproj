@@ -3,14 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DBB507329062F9700BC3B54 /* CardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB507129062F9700BC3B54 /* CardListController.swift */; };
-		5DBB507429062F9700BC3B54 /* CardListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBB507229062F9700BC3B54 /* CardListController.xib */; };
-		5DBB50772906339100BC3B54 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB50752906339100BC3B54 /* FavoritesController.swift */; };
-		5DBB50782906339100BC3B54 /* FavoritesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBB50762906339100BC3B54 /* FavoritesController.xib */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -20,10 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5DBB507129062F9700BC3B54 /* CardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListController.swift; sourceTree = "<group>"; };
-		5DBB507229062F9700BC3B54 /* CardListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListController.xib; sourceTree = "<group>"; };
-		5DBB50752906339100BC3B54 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
-		5DBB50762906339100BC3B54 /* FavoritesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesController.xib; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,21 +37,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5DBB505E290629CF00BC3B54 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				5DBB507129062F9700BC3B54 /* CardListController.swift */,
-				5DBB507229062F9700BC3B54 /* CardListController.xib */,
-				5DBB50752906339100BC3B54 /* FavoritesController.swift */,
-				5DBB50762906339100BC3B54 /* FavoritesController.xib */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
-				5DBB505E290629CF00BC3B54 /* Presentation */,
 				BF6745B62902DBB300B9818C /* Pokemon App */,
 				BF6745B52902DBB300B9818C /* Products */,
 			);
@@ -113,6 +93,7 @@
 		BF6745AC2902DBB300B9818C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
@@ -144,11 +125,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DBB507429062F9700BC3B54 /* CardListController.xib in Resources */,
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
-				5DBB50782906339100BC3B54 /* FavoritesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +140,6 @@
 			files = (
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
-				5DBB50772906339100BC3B54 /* FavoritesController.swift in Sources */,
-				5DBB507329062F9700BC3B54 /* CardListController.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +295,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +324,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
