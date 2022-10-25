@@ -37,7 +37,6 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="gdP-pf-gNQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="15" id="3pb-9W-xqj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6OU-Zw-vYD" secondAttribute="bottom" id="5Ox-kd-JJl"/>
@@ -54,9 +53,6 @@
     </objects>
     <resources>
         <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
