@@ -39,14 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22E62BA62907F99C00691D2C /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				22E62BA72907F9BB00691D2C /* Extension */,
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		22E62BA72907F9BB00691D2C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +66,7 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
-				22E62BA62907F99C00691D2C /* New Group */,
+				22E62BA72907F9BB00691D2C /* Extension */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
 				BF6745BB2902DBB300B9818C /* ViewController.swift */,
