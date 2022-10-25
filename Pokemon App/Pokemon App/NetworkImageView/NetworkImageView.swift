@@ -11,7 +11,7 @@ class NetworkImageView: UIView {
     
     var imageURL = ""
     let nibName = "NetworkImageView"
-    var contentView: UIView?
+    private var contentView: UIView?
     let loader = ImageLoader()
     
     @IBOutlet weak var imageView: UIImageView!
@@ -31,13 +31,13 @@ class NetworkImageView: UIView {
         downloadImage()
     }
     
-    func loadViewFromNib() -> UIView? {
+    private func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func downloadImage(){
+    private func downloadImage(){
         startDownloadImage()
         if let url = URL(string: imageURL) {
             loader.downloadImageWithURLSession(url: url) { result in
