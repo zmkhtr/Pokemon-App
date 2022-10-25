@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22E62BA92907F9F500691D2C /* UIView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E62BA82907F9F500691D2C /* UIView+Shimmer.swift */; };
+		22E62BAC2907FCFA00691D2C /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E62BAB2907FCFA00691D2C /* NetworkImageView.swift */; };
+		22E62BAE2907FD1E00691D2C /* NetworkImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E62BAD2907FD1E00691D2C /* NetworkImageView.xib */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		22E62BA82907F9F500691D2C /* UIView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmer.swift"; sourceTree = "<group>"; };
+		22E62BAB2907FCFA00691D2C /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
+		22E62BAD2907FD1E00691D2C /* NetworkImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NetworkImageView.xib; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		22E62BAA2907FCB500691D2C /* NetworkImageView */ = {
+			isa = PBXGroup;
+			children = (
+				22E62BAB2907FCFA00691D2C /* NetworkImageView.swift */,
+				22E62BAD2907FD1E00691D2C /* NetworkImageView.xib */,
+			);
+			path = NetworkImageView;
+			sourceTree = "<group>";
+		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +79,7 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				22E62BAA2907FCB500691D2C /* NetworkImageView */,
 				22E62BA72907F9BB00691D2C /* Extension */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
@@ -137,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
+				22E62BAE2907FD1E00691D2C /* NetworkImageView.xib in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
 			);
@@ -150,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E62BA92907F9F500691D2C /* UIView+Shimmer.swift in Sources */,
+				22E62BAC2907FCFA00691D2C /* NetworkImageView.swift in Sources */,
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
