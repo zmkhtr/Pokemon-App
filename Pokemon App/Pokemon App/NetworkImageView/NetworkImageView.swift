@@ -69,11 +69,9 @@ class NetworkImageView: UIView {
     }
     
     private func failedDownloadImage(){
-        print("Error")
-        errorLabel.isHidden = true
-        retryButton.isHidden = true
+        errorLabel.isHidden = false
+        retryButton.titleLabel?.text = nil
+        retryButton.isHidden = false
         isShimmering = false
-        backgroundColor = nil
     }
-    
 }
