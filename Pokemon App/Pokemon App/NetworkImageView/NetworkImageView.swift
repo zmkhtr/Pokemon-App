@@ -9,7 +9,7 @@ import UIKit
 
 class NetworkImageView: UIView {
     
-    var imageURL = "https://images.pokemontcg.io/swsh4/25_hires.png"
+    var imageURL = ""
     let nibName = "NetworkImageView"
     var contentView: UIView?
     let loader = ImageLoader()
@@ -17,6 +17,10 @@ class NetworkImageView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var retryButton: UIButton!
+    
+    @IBAction func onTapRetryButton(_ sender: UIButton) {
+        downloadImage()
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
