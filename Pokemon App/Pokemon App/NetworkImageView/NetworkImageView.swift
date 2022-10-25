@@ -10,6 +10,7 @@ import UIKit
 class NetworkImageView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
 
 }
