@@ -39,13 +39,17 @@ class NetworkImageView: UIView {
     
     func downloadImage(){
         startDownloadImage()
-        loader.downloadImageWithURLSession(url: URL(string: imageURL)!) { result in
-            switch result {
-            case .success(let downloadedImage):
-                self.successedDownloadImage(downloadedImage)
-            case .failure:
-                self.failedDownloadImage()
+        if let url = URL(string: imageURL) {
+            loader.downloadImageWithURLSession(url: url) { result in
+                switch result {
+                case .success(let downloadedImage):
+                    self.successedDownloadImage(downloadedImage)
+                case .failure:
+                    self.failedDownloadImage()
+                }
             }
+        } else {
+            failedDownloadImage()
         }
     }
     
