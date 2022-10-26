@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9A91C52908DEC900D1C8C5 /* CardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9A91C32908DEC900D1C8C5 /* CardListController.swift */; };
+		5D9A91C62908DEC900D1C8C5 /* CardListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A91C42908DEC900D1C8C5 /* CardListController.xib */; };
+		5D9A91C92908DEFD00D1C8C5 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9A91C72908DEFD00D1C8C5 /* FavoriteController.swift */; };
+		5D9A91CA2908DEFD00D1C8C5 /* FavoriteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A91C82908DEFD00D1C8C5 /* FavoriteController.xib */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D9A91C32908DEC900D1C8C5 /* CardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListController.swift; sourceTree = "<group>"; };
+		5D9A91C42908DEC900D1C8C5 /* CardListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListController.xib; sourceTree = "<group>"; };
+		5D9A91C72908DEFD00D1C8C5 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		5D9A91C82908DEFD00D1C8C5 /* FavoriteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteController.xib; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D9A91CB2908DF0800D1C8C5 /* CardListController */ = {
+			isa = PBXGroup;
+			children = (
+				5D9A91C32908DEC900D1C8C5 /* CardListController.swift */,
+				5D9A91C42908DEC900D1C8C5 /* CardListController.xib */,
+			);
+			path = CardListController;
+			sourceTree = "<group>";
+		};
+		5D9A91CC2908DF6400D1C8C5 /* FavoriteController */ = {
+			isa = PBXGroup;
+			children = (
+				5D9A91C72908DEFD00D1C8C5 /* FavoriteController.swift */,
+				5D9A91C82908DEFD00D1C8C5 /* FavoriteController.xib */,
+			);
+			path = FavoriteController;
+			sourceTree = "<group>";
+		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +82,8 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				5D9A91CC2908DF6400D1C8C5 /* FavoriteController */,
+				5D9A91CB2908DF0800D1C8C5 /* CardListController */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
 				BF6745BB2902DBB300B9818C /* ViewController.swift */,
@@ -126,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
+				5D9A91C62908DEC900D1C8C5 /* CardListController.xib in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
+				5D9A91CA2908DEFD00D1C8C5 /* FavoriteController.xib in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9A91C92908DEFD00D1C8C5 /* FavoriteController.swift in Sources */,
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
+				5D9A91C52908DEC900D1C8C5 /* CardListController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 			);
