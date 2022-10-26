@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListPokemonView" customModule="Pokemon_App" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="kDm-wB-PBk" id="cZF-Tg-LT5"/>
+                <outlet property="errorStackView" destination="Xef-5A-XN1" id="oWv-nr-Rbk"/>
+                <outlet property="loadingIndicatorView" destination="P1B-sA-YhW" id="DL9-RT-a9N"/>
+                <outlet property="pokemonCollectionView" destination="lTn-qD-l7w" id="jTu-am-1US"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kDm-wB-PBk">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lTn-qD-l7w">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1ir-Nm-m8K">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xef-5A-XN1">
+                    <rect key="frame" x="16" y="418.5" width="382" height="59.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcK-vx-O1o">
+                            <rect key="frame" x="103.5" y="0.0" width="175.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-f5-JhF">
+                            <rect key="frame" x="157" y="28.5" width="68.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Reload">
+                                <color key="baseBackgroundColor" red="0.0" green="0.67843137254901964" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="P1B-sA-YhW">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xef-5A-XN1" firstAttribute="centerX" secondItem="kDm-wB-PBk" secondAttribute="centerX" id="0ht-Oz-SmO"/>
+                <constraint firstAttribute="trailing" secondItem="Xef-5A-XN1" secondAttribute="trailing" constant="16" id="2gL-Uq-hHN"/>
+                <constraint firstItem="Xef-5A-XN1" firstAttribute="leading" secondItem="kDm-wB-PBk" secondAttribute="leading" constant="16" id="4da-Nb-pHq"/>
+                <constraint firstItem="lTn-qD-l7w" firstAttribute="top" secondItem="kDm-wB-PBk" secondAttribute="top" id="E1l-Fu-XcP"/>
+                <constraint firstItem="P1B-sA-YhW" firstAttribute="centerX" secondItem="kDm-wB-PBk" secondAttribute="centerX" id="EJg-wB-yXs"/>
+                <constraint firstItem="P1B-sA-YhW" firstAttribute="centerY" secondItem="kDm-wB-PBk" secondAttribute="centerY" id="H5K-sH-a4Z"/>
+                <constraint firstItem="Xef-5A-XN1" firstAttribute="centerY" secondItem="kDm-wB-PBk" secondAttribute="centerY" id="KWD-hX-kaB"/>
+                <constraint firstAttribute="trailing" secondItem="lTn-qD-l7w" secondAttribute="trailing" id="a34-74-SLJ"/>
+                <constraint firstItem="lTn-qD-l7w" firstAttribute="leading" secondItem="kDm-wB-PBk" secondAttribute="leading" id="kwW-Z1-L3w"/>
+                <constraint firstAttribute="bottom" secondItem="lTn-qD-l7w" secondAttribute="bottom" id="wwq-1P-cIW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-65" y="-21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
