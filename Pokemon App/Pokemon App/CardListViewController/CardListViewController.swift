@@ -14,10 +14,10 @@ class CardListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _setUpSearchBar()
+        setUpSearchBar()
     }
     
-    func _setUpSearchBar(){
+    private func setUpSearchBar(){
         let whiteColor = UIColor.white.withAlphaComponent(0.6)
         
         cardListSearchBar.searchTextField.attributedPlaceholder = NSAttributedString(
