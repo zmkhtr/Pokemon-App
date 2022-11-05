@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2246D35929160957005BCAE9 /* PokemonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35829160957005BCAE9 /* PokemonTabBarController.swift */; };
+		2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35B29160BB6005BCAE9 /* CardListViewController.swift */; };
 		2246D35E29160BCC005BCAE9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */; };
 		2246D36529160E48005BCAE9 /* UIColor+hexaString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D36429160E48005BCAE9 /* UIColor+hexaString.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2246D35829160957005BCAE9 /* PokemonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabBarController.swift; sourceTree = "<group>"; };
+		2246D35B29160BB6005BCAE9 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		2246D36429160E48005BCAE9 /* UIColor+hexaString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexaString.swift"; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,14 @@
 				2246D35829160957005BCAE9 /* PokemonTabBarController.swift */,
 			);
 			path = PokemonTabBarController;
+			sourceTree = "<group>";
+		};
+		2246D36129160DD2005BCAE9 /* CardListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2246D35B29160BB6005BCAE9 /* CardListViewController.swift */,
+			);
+			path = CardListViewController;
 			sourceTree = "<group>";
 		};
 		2246D36229160DE0005BCAE9 /* FavoritesViewController */ = {
@@ -88,6 +98,7 @@
 			children = (
 				2246D36329160E32005BCAE9 /* Extension */,
 				2246D36229160DE0005BCAE9 /* FavoritesViewController */,
+				2246D36129160DD2005BCAE9 /* CardListViewController */,
 				2246D36029160DBD005BCAE9 /* PokemonTabBarController */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
@@ -177,6 +188,7 @@
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 				2246D35E29160BCC005BCAE9 /* FavoritesViewController.swift in Sources */,
+				2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
