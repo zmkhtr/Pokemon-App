@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2246D35929160957005BCAE9 /* PokemonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35829160957005BCAE9 /* PokemonTabBarController.swift */; };
+		2246D36529160E48005BCAE9 /* UIColor+hexaString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D36429160E48005BCAE9 /* UIColor+hexaString.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2246D35829160957005BCAE9 /* PokemonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabBarController.swift; sourceTree = "<group>"; };
+		2246D36429160E48005BCAE9 /* UIColor+hexaString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexaString.swift"; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			path = PokemonTabBarController;
 			sourceTree = "<group>";
 		};
+		2246D36329160E32005BCAE9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2246D36429160E48005BCAE9 /* UIColor+hexaString.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				2246D36329160E32005BCAE9 /* Extension */,
 				2246D36029160DBD005BCAE9 /* PokemonTabBarController */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
+				2246D36529160E48005BCAE9 /* UIColor+hexaString.swift in Sources */,
 				2246D35929160957005BCAE9 /* PokemonTabBarController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,

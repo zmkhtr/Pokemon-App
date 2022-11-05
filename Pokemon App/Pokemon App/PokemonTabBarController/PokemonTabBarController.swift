@@ -13,6 +13,7 @@ class PokemonTabBarController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.isTranslucent = false
+        tabBar.backgroundColor = UIColor(hexaString: "#222831")
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .white
         
