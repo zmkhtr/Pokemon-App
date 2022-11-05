@@ -1,0 +1,22 @@
+//
+//  TabBarController.swift
+//  Pokemon App
+//
+//  Created by Nadia Darin on 05/11/22.
+//
+
+import UIKit
+
+class PokemonTabBarController: UITabBarController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .white
+        
+    }
+
+
+}
