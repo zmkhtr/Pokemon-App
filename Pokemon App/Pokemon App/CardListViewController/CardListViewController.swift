@@ -25,6 +25,8 @@ class CardListViewController: UIViewController {
             attributes: [.foregroundColor: whiteColor]
         )
         
+        cardListSearchBar.searchTextField.textColor = .white
+        
         let image = UIImage(systemName: "magnifyingglass")?.withTintColor(whiteColor, renderingMode: .alwaysOriginal)
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
         
