@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		22086D17291641C200BBDFDC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22086D16291641C200BBDFDC /* Colors.xcassets */; };
 		223D59A12916A95C0067B093 /* CardListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223D59A02916A95C0067B093 /* CardListCollectionView.swift */; };
-		223D59A32916A9740067B093 /* CardListCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223D59A22916A9740067B093 /* CardListCollectionView.xib */; };
 		2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35B29160BB6005BCAE9 /* CardListViewController.swift */; };
 		2246D35E29160BCC005BCAE9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		22086D16291641C200BBDFDC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		223D59A02916A95C0067B093 /* CardListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionView.swift; sourceTree = "<group>"; };
-		223D59A22916A9740067B093 /* CardListCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListCollectionView.xib; sourceTree = "<group>"; };
 		2246D35B29160BB6005BCAE9 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				223D59A02916A95C0067B093 /* CardListCollectionView.swift */,
-				223D59A22916A9740067B093 /* CardListCollectionView.xib */,
 			);
 			path = CardListCollectionView;
 			sourceTree = "<group>";
@@ -173,7 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
-				223D59A32916A9740067B093 /* CardListCollectionView.xib in Resources */,
 				22086D17291641C200BBDFDC /* Colors.xcassets in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
