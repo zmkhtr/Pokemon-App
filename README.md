@@ -21,3 +21,4 @@ Pokemon API = [API](https://docs.pokemontcg.io/)
     -  Success -> Show Data
     -  Failed -> Show Error <- Selalu tampilkan error yang jelas jangan tampilkan pesan error yang ambigu.
 8. `Jangan` buat dan gunakan `Singleton`
+9. `Jangan` pakai 3rd Party library baik itu SPM/PODS
