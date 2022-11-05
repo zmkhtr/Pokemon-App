@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1741" y="-310"/>
         </scene>
-        <!--Pokemon Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="2T1-EQ-2Ag">
             <objects>
-                <tabBarController id="CK5-Qc-sw8" customClass="PokemonTabBarController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="CK5-Qc-sw8" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M05-dv-8JN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
