@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CardCollectionViewCell" customModule="Pokemon_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hd8-0Y-ngm">
+                        <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-Cp-LmC">
+                        <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="aK8-Cp-LmC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1YY-Nd-HtW"/>
+                <constraint firstAttribute="trailing" secondItem="aK8-Cp-LmC" secondAttribute="trailing" id="DCP-ut-X1D"/>
+                <constraint firstAttribute="bottom" secondItem="Hd8-0Y-ngm" secondAttribute="bottom" id="Ffw-mo-p2h"/>
+                <constraint firstItem="Hd8-0Y-ngm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eq3-oT-scJ"/>
+                <constraint firstAttribute="trailing" secondItem="Hd8-0Y-ngm" secondAttribute="trailing" id="iKt-lM-Hk1"/>
+                <constraint firstItem="aK8-Cp-LmC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="izP-gR-fql"/>
+                <constraint firstAttribute="bottom" secondItem="aK8-Cp-LmC" secondAttribute="bottom" id="nJR-oi-sG7"/>
+                <constraint firstItem="Hd8-0Y-ngm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="r3g-cS-TV3"/>
+            </constraints>
+            <size key="customSize" width="126" height="157"/>
+            <connections>
+                <outlet property="pokemonCardImageView" destination="aK8-Cp-LmC" id="mlk-ZE-NbU"/>
+            </connections>
+            <point key="canvasLocation" x="152" y="-61"/>
+        </collectionViewCell>
+    </objects>
+</document>

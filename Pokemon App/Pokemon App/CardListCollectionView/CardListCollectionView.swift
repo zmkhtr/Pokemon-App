@@ -9,23 +9,53 @@ import UIKit
 
 class CardListCollectionView: UICollectionView {
     
-   
-//        var contentView: UIView?
-
-//    required init?(coder aDecoder: NSCoder) {
-//            super.init(coder: aDecoder)
-//
-//            guard let view = loadViewFromNib() else { return }
-//            view.frame = self.bounds
-//            self.addSubview(view)
-//            contentView = view
-//        }
-//
-//        func loadViewFromNib() -> UIView? {
-//            let bundle = Bundle(for: type(of: self))
-//            let nib = UINib(nibName: "CardListCollectionView", bundle: bundle)
-//            return nib.instantiate(withOwner: self, options: nil).first as? UIView
-//        }
-
-
+    var pokemonList: [PokemonCard] = []
+    
 }
+
+// MARK: - UICollectionViewDataSource
+extension CardListCollectionView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pokemonList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
+        
+        let pokemonCard = pokemonList[indexPath.row]
+        
+        cell.downloadImage(imageURL: pokemonCard.imageURL)
+        
+        
+        return cell
+        
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CardListCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let padding: CGFloat =  10
+        let collectionViewSize = collectionView.frame.size.width - padding
+        let width = collectionViewSize/2
+        return CGSize(width: width, height: width * 3 / 2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension CardListCollectionView: UICollectionViewDelegate {
+}
+
+
+
+
