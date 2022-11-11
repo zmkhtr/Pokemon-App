@@ -17,14 +17,16 @@ enum ImageResult {
 
 class ImageLoader {
     
+    private var downloadTask: URLSessionDataTask?
+    
     func downloadImageWithURLSession(url: URL, completion: @escaping (ImageResult) -> Void) {
         let session = URLSession(configuration: .default)
         
-        session.dataTask(with: url) { (data, response, error) in
+        self.downloadTask = session.dataTask(with: url) { (data, response, error) in
             if let data = data,
-                let image = UIImage(data: data),
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
+               let image = UIImage(data: data),
+               let response = response as? HTTPURLResponse,
+               response.statusCode == 200 {
                 
                 DispatchQueue.main.sync {
                     completion(.success(image))
@@ -32,7 +34,14 @@ class ImageLoader {
             } else {
                 completion(.failure)
             }
-        }.resume()
+        }
+        
+        downloadTask?.resume()
+    }
+    
+    func cancelDownloadImage() {
+        downloadTask?.suspend()
+        downloadTask = nil
     }
 }
 

@@ -14,10 +14,9 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     
     let imageLoader = ImageLoader()
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         
     }
     
@@ -35,6 +34,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func cancelDownloadImage(){
+        imageLoader.cancelDownloadImage()
         DispatchQueue.main.async {
             self.pokemonCardImageView.image = nil
         }

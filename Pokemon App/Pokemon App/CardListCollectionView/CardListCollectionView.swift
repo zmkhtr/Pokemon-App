@@ -31,6 +31,11 @@ extension CardListCollectionView: UICollectionViewDataSource {
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! CardCollectionViewCell
+        cell.cancelDownloadImage()
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
