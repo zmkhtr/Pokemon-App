@@ -55,6 +55,16 @@ class CardListViewController: UIViewController {
         let image = UIImage(systemName: "magnifyingglass")?.withTintColor(whiteColor, renderingMode: .alwaysOriginal)
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
         
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "PrimaryColor")
+       
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        if #available(iOS 15.0, *) {
+            navigationItem.compactScrollEdgeAppearance = appearance
+           }
         navigationItem.titleView = cardListSearchBar
     }
     
