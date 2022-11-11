@@ -26,7 +26,7 @@ class CardListViewController: UIViewController {
         super.viewDidLoad()
         
         setUpSearchBar()
-        setUPCardListCollectionView()
+        setUpCardListCollectionView()
         loadPokemon()
         
     }
@@ -58,7 +58,7 @@ class CardListViewController: UIViewController {
         navigationItem.titleView = cardListSearchBar
     }
     
-    private func setUPCardListCollectionView() {
+    private func setUpCardListCollectionView() {
         cardListCollectionView.delegate = cardListCollectionView.self
         cardListCollectionView.dataSource = cardListCollectionView.self
         cardListCollectionView.refreshControl = refreshControl
@@ -70,7 +70,7 @@ class CardListViewController: UIViewController {
     func loadPokemon() {
         let loader = PokemonCardListLoader()
         startLoadPokemon()
-        loader.getMovieList { result in
+        loader.getPokemonList { result in
             switch result {
             case .success(let pokemonListResult):
                 self.successLoadPokemon(pokemonListResult)
@@ -101,7 +101,6 @@ class CardListViewController: UIViewController {
         DispatchQueue.main.async {
             self.loadingCardListIndicatorView.isHidden = true
             self.errorMessageLabel.isHidden = false
-            print(err)
         }
     }
     

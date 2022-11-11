@@ -15,16 +15,20 @@ enum PokemonCardListResult {
 
 class PokemonCardListLoader {
     
-    func getMovieList(completion: @escaping (PokemonCardListResult) -> Void) {
+    func getPokemonList(completion: @escaping (PokemonCardListResult) -> Void) {
         let url = URL(string: "https://api.pokemontcg.io/v2/cards?pageSize=10")!
-        
-        
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.sync {
                 do {
-                    let movies = try self.transformJsonDataToMovieList(with: data!)
-                    completion(.success(movies))
+                    if let data = data,
+                       let response = response as? HTTPURLResponse,
+                       response.statusCode == 200 {
+                        let listOfPokemon = try self.transformJsonDataToListOfPokemonCard(with: data)
+                        completion(.success(listOfPokemon))
+                    } else {
+                        completion(.failure("Unexpected Data"))
+                    }
                 } catch let error {
                     
                     let errorMessage = error.localizedDescription
@@ -34,7 +38,7 @@ class PokemonCardListLoader {
         }.resume()
     }
     
-    private func transformJsonDataToMovieList(with data: Data) throws -> [PokemonCard] {
+    private func transformJsonDataToListOfPokemonCard(with data: Data) throws -> [PokemonCard] {
         let decoder = JSONDecoder()
         let pokemonCardList = try decoder.decode(PokemonCardList.self, from: data)
         let listOfPokemon = pokemonCardList.data.map { remotePokemon in

@@ -21,27 +21,16 @@ class ImageLoader {
         let session = URLSession(configuration: .default)
         
         session.dataTask(with: url) { (data, response, error) in
-            if let _ = error {
-                completion(.failure)
+            if let data = data,
+                let image = UIImage(data: data),
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
                 
+                DispatchQueue.main.sync {
+                    completion(.success(image))
+                }
             } else {
-                guard let _ = response as? HTTPURLResponse else {
-                    completion(.failure)
-                    return
-                }
-                
-                guard let imageData = data else {
-                    completion(.failure)
-                    return
-                }
-                
-                if let image = UIImage(data: imageData) {
-                    DispatchQueue.main.sync {
-                        completion(.success(image))
-                    }
-                } else {
-                    completion(.failure)
-                }
+                completion(.failure)
             }
         }.resume()
     }

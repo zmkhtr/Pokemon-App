@@ -18,5 +18,3 @@ class PokemonCard {
         self.imageURL = imageURL
     }
 }
-
-let fakePokemonCard = PokemonCard(id: "123" , imageURL: "https://images.pokemontcg.io/swsh4/25_hires.png")
