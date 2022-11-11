@@ -32,8 +32,16 @@ class CardCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
-        
-        
+    }
+    
+    func cancelDownloadImage(){
+        DispatchQueue.main.async {
+            self.pokemonCardImageView.image = nil
+        }
+    }
+    
+    func deallocated(){
+        // TODO: fungsi untuk deallocated already showed image from memory
     }
     
 }
