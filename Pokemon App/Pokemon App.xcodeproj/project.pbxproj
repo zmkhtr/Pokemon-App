@@ -113,13 +113,6 @@
 			path = FavoritesViewController;
 			sourceTree = "<group>";
 		};
-		2246D36329160E32005BCAE9 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		22863A76291FE94C003223DE /* CategoryListCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,24 +158,23 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
-				22863A8B2920026C003223DE /* Extension */,
-				22863A77291FE96A003223DE /* CategoryCollectionViewCell */,
-				22863A76291FE94C003223DE /* CategoryListCollectionView */,
-				223D59A72916B51B0067B093 /* CardCollectionViewCell */,
-				223D59A42916AFE20067B093 /* Data Model */,
-				223D599F2916A9390067B093 /* CardListCollectionView */,
-				2246D36329160E32005BCAE9 /* Extension */,
-				2246D36229160DE0005BCAE9 /* FavoritesViewController */,
-				2246D36129160DD2005BCAE9 /* CardListViewController */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
 				BF6745BB2902DBB300B9818C /* ViewController.swift */,
 				BF6745BD2902DBB300B9818C /* Main.storyboard */,
+				223D59A42916AFE20067B093 /* Data Model */,
+				2246D36129160DD2005BCAE9 /* CardListViewController */,
+				2246D36229160DE0005BCAE9 /* FavoritesViewController */,
+				223D599F2916A9390067B093 /* CardListCollectionView */,
+				22863A76291FE94C003223DE /* CategoryListCollectionView */,
+				223D59A72916B51B0067B093 /* CardCollectionViewCell */,
+				22863A77291FE96A003223DE /* CategoryCollectionViewCell */,
+				2203FD85291BD3E8002B4804 /* ImageLoader.dart.swift */,
+				22863A8B2920026C003223DE /* Extension */,
 				BF6745C02902DBB400B9818C /* Assets.xcassets */,
 				BF6745C22902DBB400B9818C /* LaunchScreen.storyboard */,
 				BF6745C52902DBB400B9818C /* Info.plist */,
 				22086D16291641C200BBDFDC /* Colors.xcassets */,
-				2203FD85291BD3E8002B4804 /* ImageLoader.dart.swift */,
 			);
 			path = "Pokemon App";
 			sourceTree = "<group>";
