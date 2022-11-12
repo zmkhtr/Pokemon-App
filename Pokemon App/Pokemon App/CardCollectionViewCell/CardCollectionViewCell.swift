@@ -15,6 +15,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorButton: UIButton!
     
+    var pokemonImageURL = ""
+    
     
     let imageLoader = ImageLoader()
 
@@ -25,9 +27,13 @@ class CardCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func downloadImage(imageURL: String){
+    @IBAction func onTapErrorButton(_ sender: Any) {
+        downloadImage()
+    }
+    
+    func downloadImage(){
         startDownloadImage()
-        if let url = URL(string: imageURL) {
+        if let url = URL(string: pokemonImageURL) {
             imageLoader.downloadImageWithURLSession(url: url) { result in
                 switch result {
                 case .success(let downloadedImage):

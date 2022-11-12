@@ -35,6 +35,9 @@
                                 <rect key="frame" x="21" y="83" width="84.5" height="31"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Try Again"/>
+                                <connections>
+                                    <action selector="onTapErrorButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6nJ-jM-Yxb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

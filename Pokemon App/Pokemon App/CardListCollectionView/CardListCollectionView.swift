@@ -30,7 +30,8 @@ extension CardListCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let pokemonCard = pokemonList[indexPath.row]
         let cell = cell as! CardCollectionViewCell
-        cell.downloadImage(imageURL: pokemonCard.imageURL)
+        cell.pokemonImageURL = pokemonCard.imageURL
+        cell.downloadImage()
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
