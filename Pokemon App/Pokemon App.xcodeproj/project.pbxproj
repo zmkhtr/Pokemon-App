@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D09C09C291CDC0500EA5D8F /* PokemonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */; };
+		5D8E8505291FB0070081CFC2 /* CardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E8504291FB0070081CFC2 /* CardListController.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabBarController.swift; sourceTree = "<group>"; };
+		5D8E8504291FB0070081CFC2 /* CardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListController.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			path = PokemonTabBarController;
 			sourceTree = "<group>";
 		};
+		5D8E8503291FAFD60081CFC2 /* CardListController */ = {
+			isa = PBXGroup;
+			children = (
+				5D8E8504291FB0070081CFC2 /* CardListController.swift */,
+			);
+			path = CardListController;
+			sourceTree = "<group>";
+		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				5D8E8503291FAFD60081CFC2 /* CardListController */,
 				5D09C09A291CDBD200EA5D8F /* PokemonTabBarController */,
 				BF6745B72902DBB300B9818C /* AppDelegate.swift */,
 				BF6745B92902DBB300B9818C /* SceneDelegate.swift */,
@@ -151,6 +162,7 @@
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				5D09C09C291CDC0500EA5D8F /* PokemonTabBarController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
+				5D8E8505291FB0070081CFC2 /* CardListController.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
