@@ -40,8 +40,4 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func deallocated(){
-        // TODO: fungsi untuk deallocated already showed image from memory
-    }
-    
 }
