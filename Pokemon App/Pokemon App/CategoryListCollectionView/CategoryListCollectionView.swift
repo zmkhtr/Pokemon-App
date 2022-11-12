@@ -38,5 +38,9 @@ extension CategoryListCollectionView: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension CategoryListCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categoryList[indexPath.row]
+        self.reloadData()
+    }
 }
 
