@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favourite View Controller-->
+        <!--Favourites View Controller-->
         <scene sceneID="JRc-Xe-ShZ">
             <objects>
-                <viewController id="jx7-Me-kNz" customClass="FavouriteViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jx7-Me-kNz" customClass="FavouritesViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pG5-hj-nWq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
