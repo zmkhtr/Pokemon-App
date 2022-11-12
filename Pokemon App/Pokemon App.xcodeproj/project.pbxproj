@@ -13,6 +13,8 @@
 		22EA1565291F3EC800798A64 /* CategoryListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA1564291F3EC800798A64 /* CategoryListCollectionView.swift */; };
 		22EA1569291F428300798A64 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA1567291F428300798A64 /* CategoryCell.swift */; };
 		22EA156A291F428300798A64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EA1568291F428300798A64 /* CategoryCell.xib */; };
+		22EA156C291F62DE00798A64 /* CategoryListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA156B291F62DE00798A64 /* CategoryListLoader.swift */; };
+		22EA156F291F63A200798A64 /* RemoteCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA156E291F63A200798A64 /* RemoteCategories.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		22EA1564291F3EC800798A64 /* CategoryListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCollectionView.swift; sourceTree = "<group>"; };
 		22EA1567291F428300798A64 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		22EA1568291F428300798A64 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		22EA156B291F62DE00798A64 /* CategoryListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListLoader.swift; sourceTree = "<group>"; };
+		22EA156E291F63A200798A64 /* RemoteCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCategories.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				22EA1564291F3EC800798A64 /* CategoryListCollectionView.swift */,
+				22EA156B291F62DE00798A64 /* CategoryListLoader.swift */,
 			);
 			path = CategoryListCollectionView;
 			sourceTree = "<group>";
@@ -87,6 +92,14 @@
 				22EA1568291F428300798A64 /* CategoryCell.xib */,
 			);
 			path = CategoyCell;
+			sourceTree = "<group>";
+		};
+		22EA156D291F636300798A64 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				22EA156E291F63A200798A64 /* RemoteCategories.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		BF6745AB2902DBB300B9818C = {
@@ -108,6 +121,7 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				22EA156D291F636300798A64 /* Data Model */,
 				22EA1566291F424300798A64 /* CategoyCell */,
 				22EA1563291F3E9F00798A64 /* CategoryListCollectionView */,
 				2246D36329160E32005BCAE9 /* Extension */,
@@ -198,10 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EA156F291F63A200798A64 /* RemoteCategories.swift in Sources */,
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				22EA1565291F3EC800798A64 /* CategoryListCollectionView.swift in Sources */,
 				22EA1569291F428300798A64 /* CategoryCell.swift in Sources */,
+				22EA156C291F62DE00798A64 /* CategoryListLoader.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 				2246D35E29160BCC005BCAE9 /* FavoritesViewController.swift in Sources */,
 				2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */,
