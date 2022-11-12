@@ -69,5 +69,6 @@ class CardListViewController: UIViewController {
         categoryListCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
         categoryListCollectionView.delegate = categoryListCollectionView.self
         categoryListCollectionView.dataSource = categoryListCollectionView.self
+        categoryListCollectionView.showsHorizontalScrollIndicator = false
     }
 }
