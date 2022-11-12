@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fj7-e8-kUZ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,57 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="15" y="-2"/>
-        </scene>
-        <!--Item 2-->
+        <!--Favourite-->
         <scene sceneID="JRc-Xe-ShZ">
             <objects>
-                <viewController id="jx7-Me-kNz" sceneMemberID="viewController">
+                <viewController title="Favourite" id="jx7-Me-kNz" customClass="FavouriteViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pG5-hj-nWq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="T0f-Qk-C80"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FSE-RE-6NT"/>
+                    <tabBarItem key="tabBarItem" title="Favourite" image="heart" catalog="system" selectedImage="heart.fill" id="FSE-RE-6NT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjU-KS-R92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="191"/>
+            <point key="canvasLocation" x="2007" y="411"/>
         </scene>
-        <!--Item 1-->
+        <!--CardList-->
         <scene sceneID="DDd-hC-VCD">
             <objects>
-                <viewController id="JS8-xY-Twe" sceneMemberID="viewController">
+                <viewController title="CardList" id="JS8-xY-Twe" customClass="CardListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L9K-9D-Krg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="duR-bf-rDL"/>
+                    <tabBarItem key="tabBarItem" title="CardList" image="greetingcard" catalog="system" selectedImage="greetingcard.fill" id="duR-bf-rDL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngd-Nw-mTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="-417"/>
+            <point key="canvasLocation" x="2007" y="-337"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Pokemon Tab Bar Controller-->
         <scene sceneID="DbK-UX-vum">
             <objects>
-                <tabBarController id="Fj7-e8-kUZ" sceneMemberID="viewController">
+                <tabBarController id="Fj7-e8-kUZ" customClass="PokemonTabBarController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wt0-FT-z4z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -72,10 +57,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN8-EN-i01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="-113"/>
+            <point key="canvasLocation" x="876" y="-2"/>
         </scene>
     </scenes>
     <resources>
+        <image name="greetingcard" catalog="system" width="108" height="128"/>
+        <image name="greetingcard.fill" catalog="system" width="105" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
