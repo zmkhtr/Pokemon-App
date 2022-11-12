@@ -8,12 +8,10 @@
 import Foundation
 //import UIKit
 
-enum CategoryListResult {
-    case success([String])
-    case failure(String)
-}
 
 class CategoryListLoader {
+    
+    typealias CategoryListResult = Swift.Result<[String], Error>
     
     func getCategories(completion: @escaping (CategoryListResult) -> Void) {
         let url = URL(string: "https://api.pokemontcg.io/v2/types")!
@@ -27,11 +25,11 @@ class CategoryListLoader {
                         let listOfPokemon = try self.transformJsonDataToListOfPokemonCard(with: data)
                         completion(.success(listOfPokemon))
                     } else {
-                        completion(.failure("Unexpected Data"))
+                        completion(.failure(CustomError.unexpectedData))
+                        
                     }
                 } catch let error {
-                    let errorMessage = error.localizedDescription
-                    completion(.failure(errorMessage))
+                    completion(.failure(error))
                 }
             }
         }.resume()
@@ -45,3 +43,8 @@ class CategoryListLoader {
     }
     
 }
+
+enum CustomError: Error {
+    case unexpectedData
+}
+

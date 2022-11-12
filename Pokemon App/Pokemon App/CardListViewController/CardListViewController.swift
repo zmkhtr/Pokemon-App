@@ -32,7 +32,7 @@ class CardListViewController: UIViewController {
             case .success(let categoriesListResult):
                 self.successLoadPokemon(categoriesListResult)
             case .failure(let err):
-                self.failedLoadPokemon(err)
+                self.failedLoadPokemon(err.localizedDescription)
             }
         }
     }
@@ -70,5 +70,6 @@ class CardListViewController: UIViewController {
         categoryListCollectionView.delegate = categoryListCollectionView.self
         categoryListCollectionView.dataSource = categoryListCollectionView.self
         categoryListCollectionView.showsHorizontalScrollIndicator = false
+        categoryListCollectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15);
     }
 }

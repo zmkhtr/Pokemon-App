@@ -24,9 +24,6 @@ class CategoryCell: UICollectionViewCell {
         categoryBackgroundView.layer.masksToBounds = true;
         categoryBackgroundView.backgroundColor = selected ? UIColor(named: "ButtonColors") : UIColor(named: "PrimaryColor")
         categoryLabel.text = text
-//            self.categoryButton.titleLabel?.text = text
-//        self..backgroundColor = selected ? UIColor(named: "ButtonColors") : UIColor(named: "PrimaryColor")
-
     }
 
 }
