@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8p-XS-BmR">
-                                <rect key="frame" x="30" y="10" width="133" height="30"/>
+                                <rect key="frame" x="20" y="8" width="153" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" name="WhiteColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,12 +30,12 @@
                         </subviews>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="v8p-XS-BmR" secondAttribute="trailing" constant="30" id="Eon-SU-aXd"/>
-                            <constraint firstItem="v8p-XS-BmR" firstAttribute="top" secondItem="nCX-n6-ib6" secondAttribute="top" constant="10" id="OXZ-zp-ES9"/>
-                            <constraint firstItem="v8p-XS-BmR" firstAttribute="leading" secondItem="nCX-n6-ib6" secondAttribute="leading" constant="30" id="Pfd-Zq-SDr"/>
+                            <constraint firstAttribute="trailing" secondItem="v8p-XS-BmR" secondAttribute="trailing" constant="20" id="Eon-SU-aXd"/>
+                            <constraint firstItem="v8p-XS-BmR" firstAttribute="top" secondItem="nCX-n6-ib6" secondAttribute="top" constant="8" id="OXZ-zp-ES9"/>
+                            <constraint firstItem="v8p-XS-BmR" firstAttribute="leading" secondItem="nCX-n6-ib6" secondAttribute="leading" constant="20" id="Pfd-Zq-SDr"/>
                             <constraint firstItem="v8p-XS-BmR" firstAttribute="centerX" secondItem="nCX-n6-ib6" secondAttribute="centerX" id="URI-de-fuy"/>
                             <constraint firstItem="v8p-XS-BmR" firstAttribute="centerY" secondItem="nCX-n6-ib6" secondAttribute="centerY" id="UkD-9k-AQz"/>
-                            <constraint firstAttribute="bottom" secondItem="v8p-XS-BmR" secondAttribute="bottom" constant="10" id="xRr-ee-SXI"/>
+                            <constraint firstAttribute="bottom" secondItem="v8p-XS-BmR" secondAttribute="bottom" constant="8" id="xRr-ee-SXI"/>
                         </constraints>
                     </view>
                 </subviews>
