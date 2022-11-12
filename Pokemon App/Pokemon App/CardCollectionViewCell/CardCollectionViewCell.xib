@@ -17,33 +17,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hd8-0Y-ngm">
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="46D-oi-YLI">
                         <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="20"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-Cp-LmC">
+                                <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aK8-Cp-LmC" secondAttribute="trailing" id="3uh-cP-lvs"/>
+                            <constraint firstAttribute="bottom" secondItem="aK8-Cp-LmC" secondAttribute="bottom" id="Lht-Pc-2d3"/>
+                            <constraint firstItem="aK8-Cp-LmC" firstAttribute="leading" secondItem="46D-oi-YLI" secondAttribute="leading" id="Sf1-aT-G31"/>
+                            <constraint firstItem="aK8-Cp-LmC" firstAttribute="top" secondItem="46D-oi-YLI" secondAttribute="top" id="qGo-gm-jc7"/>
+                        </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-Cp-LmC">
-                        <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
-                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="aK8-Cp-LmC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1YY-Nd-HtW"/>
-                <constraint firstAttribute="trailing" secondItem="aK8-Cp-LmC" secondAttribute="trailing" id="DCP-ut-X1D"/>
-                <constraint firstAttribute="bottom" secondItem="Hd8-0Y-ngm" secondAttribute="bottom" id="Ffw-mo-p2h"/>
-                <constraint firstItem="Hd8-0Y-ngm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eq3-oT-scJ"/>
-                <constraint firstAttribute="trailing" secondItem="Hd8-0Y-ngm" secondAttribute="trailing" id="iKt-lM-Hk1"/>
-                <constraint firstItem="aK8-Cp-LmC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="izP-gR-fql"/>
-                <constraint firstAttribute="bottom" secondItem="aK8-Cp-LmC" secondAttribute="bottom" id="nJR-oi-sG7"/>
-                <constraint firstItem="Hd8-0Y-ngm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="r3g-cS-TV3"/>
+                <constraint firstAttribute="trailing" secondItem="46D-oi-YLI" secondAttribute="trailing" id="6O7-md-5Pl"/>
+                <constraint firstItem="46D-oi-YLI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8f7-UY-vYL"/>
+                <constraint firstItem="46D-oi-YLI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RAd-bU-Cwm"/>
+                <constraint firstAttribute="bottom" secondItem="46D-oi-YLI" secondAttribute="bottom" id="jhe-52-jBv"/>
             </constraints>
             <size key="customSize" width="126" height="157"/>
             <connections>
+                <outlet property="imageContainerView" destination="46D-oi-YLI" id="3mQ-yk-OPc"/>
                 <outlet property="pokemonCardImageView" destination="aK8-Cp-LmC" id="mlk-ZE-NbU"/>
             </connections>
             <point key="canvasLocation" x="152" y="-61"/>
