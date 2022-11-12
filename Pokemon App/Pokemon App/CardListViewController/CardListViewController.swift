@@ -13,6 +13,7 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var cardListCollectionView: CardListCollectionView!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var loadingCardListIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var categoryListCollectionView: CategoryListCollectionView!
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -28,6 +29,8 @@ class CardListViewController: UIViewController {
         setUpSearchBar()
         setUpCardListCollectionView()
         loadPokemon()
+        setUpCategoryList()
+        loadCategories()
         
     }
     
@@ -72,12 +75,18 @@ class CardListViewController: UIViewController {
         cardListCollectionView.delegate = cardListCollectionView.self
         cardListCollectionView.dataSource = cardListCollectionView.self
         cardListCollectionView.refreshControl = refreshControl
-        cardListCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
-        
-        
+        cardListCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")        
     }
     
-    func loadPokemon() {
+    private func setUpCategoryList() {
+        categoryListCollectionView.register(UINib(nibName: "CategoryListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCollectionViewCell")
+        categoryListCollectionView.delegate = categoryListCollectionView.self
+        categoryListCollectionView.dataSource = categoryListCollectionView.self
+        categoryListCollectionView.showsHorizontalScrollIndicator = false
+        categoryListCollectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15);
+    }
+    
+    private func loadPokemon() {
         let loader = PokemonCardListLoader()
         startLoadPokemon()
         loader.getPokemonList { result in
@@ -113,6 +122,31 @@ class CardListViewController: UIViewController {
             self.errorMessageLabel.isHidden = false
         }
     }
+    
+    private func loadCategories() {
+        let loader = CategoryListLoader()
+        loader.getCategories { result in
+            switch result {
+            case .success(let categoriesListResult):
+                self.successLoadCategories(categoriesListResult)
+            case .failure(let err):
+                self.failedLoadCategories(err.localizedDescription)
+            }
+        }
+    }
+    
+    private func successLoadCategories(_ pokemonListResult: [String]) {
+        DispatchQueue.main.async {
+            self.categoryListCollectionView.categoryList = pokemonListResult
+            self.categoryListCollectionView.selectedCategory = pokemonListResult.count > 0 ? pokemonListResult.first! : ""
+            self.categoryListCollectionView.reloadData()
+        }
+    }
+    
+    private func failedLoadCategories(_ err: String) {
+        // TODO: failed categories??
+    }
+
     
     
 }

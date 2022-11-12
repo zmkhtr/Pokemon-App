@@ -15,6 +15,11 @@
 		223D59AB2916B5890067B093 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223D59A92916B5890067B093 /* CardCollectionViewCell.xib */; };
 		2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35B29160BB6005BCAE9 /* CardListViewController.swift */; };
 		2246D35E29160BCC005BCAE9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */; };
+		22863A7D291FEAFD003223DE /* RemoteCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22863A7C291FEAFD003223DE /* RemoteCategories.swift */; };
+		22863A80291FEBC5003223DE /* CategoryListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22863A7E291FEBC5003223DE /* CategoryListCollectionView.swift */; };
+		22863A81291FEBC5003223DE /* CategoryListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22863A7F291FEBC5003223DE /* CategoryListLoader.swift */; };
+		22863A88291FEC4F003223DE /* CategoryListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22863A86291FEC4F003223DE /* CategoryListCollectionViewCell.xib */; };
+		22863A89291FEC4F003223DE /* CategoryListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22863A87291FEC4F003223DE /* CategoryListCollectionViewCell.swift */; };
 		22C25BBC291778CA004E1E4E /* RemotePokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C25BBB291778CA004E1E4E /* RemotePokemonCard.swift */; };
 		22C25BBE29177CBD004E1E4E /* PokemonCardListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C25BBD29177CBD004E1E4E /* PokemonCardListLoader.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
@@ -34,6 +39,11 @@
 		223D59A92916B5890067B093 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		2246D35B29160BB6005BCAE9 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		2246D35D29160BCC005BCAE9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		22863A7C291FEAFD003223DE /* RemoteCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCategories.swift; sourceTree = "<group>"; };
+		22863A7E291FEBC5003223DE /* CategoryListCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCollectionView.swift; sourceTree = "<group>"; };
+		22863A7F291FEBC5003223DE /* CategoryListLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListLoader.swift; sourceTree = "<group>"; };
+		22863A86291FEC4F003223DE /* CategoryListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListCollectionViewCell.xib; sourceTree = "<group>"; };
+		22863A87291FEC4F003223DE /* CategoryListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCollectionViewCell.swift; sourceTree = "<group>"; };
 		22C25BBB291778CA004E1E4E /* RemotePokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePokemonCard.swift; sourceTree = "<group>"; };
 		22C25BBD29177CBD004E1E4E /* PokemonCardListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardListLoader.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +81,7 @@
 			children = (
 				223D59A52916B0EF0067B093 /* PokemonCard.swift */,
 				22C25BBB291778CA004E1E4E /* RemotePokemonCard.swift */,
+				22863A7C291FEAFD003223DE /* RemoteCategories.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -107,6 +118,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		22863A76291FE94C003223DE /* CategoryListCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				22863A7E291FEBC5003223DE /* CategoryListCollectionView.swift */,
+				22863A7F291FEBC5003223DE /* CategoryListLoader.swift */,
+			);
+			path = CategoryListCollectionView;
+			sourceTree = "<group>";
+		};
+		22863A77291FE96A003223DE /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				22863A87291FEC4F003223DE /* CategoryListCollectionViewCell.swift */,
+				22863A86291FEC4F003223DE /* CategoryListCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		BF6745AB2902DBB300B9818C = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +155,8 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				22863A77291FE96A003223DE /* CategoryCollectionViewCell */,
+				22863A76291FE94C003223DE /* CategoryListCollectionView */,
 				223D59A72916B51B0067B093 /* CardCollectionViewCell */,
 				223D59A42916AFE20067B093 /* Data Model */,
 				223D599F2916A9390067B093 /* CardListCollectionView */,
@@ -206,6 +237,7 @@
 				223D59AB2916B5890067B093 /* CardCollectionViewCell.xib in Resources */,
 				22086D17291641C200BBDFDC /* Colors.xcassets in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
+				22863A88291FEC4F003223DE /* CategoryListCollectionViewCell.xib in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,9 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22863A80291FEBC5003223DE /* CategoryListCollectionView.swift in Sources */,
 				22C25BBC291778CA004E1E4E /* RemotePokemonCard.swift in Sources */,
+				22863A89291FEC4F003223DE /* CategoryListCollectionViewCell.swift in Sources */,
 				2203FD86291BD3E8002B4804 /* ImageLoader.dart.swift in Sources */,
 				223D59AA2916B5890067B093 /* CardCollectionViewCell.swift in Sources */,
+				22863A81291FEBC5003223DE /* CategoryListLoader.swift in Sources */,
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
 				22C25BBE29177CBD004E1E4E /* PokemonCardListLoader.swift in Sources */,
@@ -228,6 +263,7 @@
 				223D59A12916A95C0067B093 /* CardListCollectionView.swift in Sources */,
 				2246D35C29160BB6005BCAE9 /* CardListViewController.swift in Sources */,
 				223D59A62916B0EF0067B093 /* PokemonCard.swift in Sources */,
+				22863A7D291FEAFD003223DE /* RemoteCategories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

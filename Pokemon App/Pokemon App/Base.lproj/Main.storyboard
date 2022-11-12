@@ -7,7 +7,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,53 +34,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWs-Ng-RS7" customClass="CardListCollectionView" customModule="Pokemon_App" customModuleProvider="target">
-                                <rect key="frame" x="10" y="88" width="394" height="725"/>
-                                <color key="backgroundColor" name="SecondaryColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AKf-m2-LDH">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7NZ-3D-VUK">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-VJ-OG5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-r5-jcw" customClass="CategoryListCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <color key="backgroundColor" name="SecondaryColor"/>
+                                        <color key="tintColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj6-4J-4gj">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="8mN-M4-hxd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vpa-r5-jcw" secondAttribute="trailing" id="F88-jf-3fG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vpa-r5-jcw" secondAttribute="bottom" id="ISK-a1-a81"/>
+                                    <constraint firstItem="Vpa-r5-jcw" firstAttribute="leading" secondItem="bfS-VJ-OG5" secondAttribute="leading" id="LEx-Ng-FIs"/>
+                                    <constraint firstItem="Vpa-r5-jcw" firstAttribute="top" secondItem="bfS-VJ-OG5" secondAttribute="top" id="pFq-dy-mEQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKG-2E-hBc">
+                                <rect key="frame" x="0.0" y="158" width="414" height="655"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWs-Ng-RS7" customClass="CardListCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="655"/>
+                                        <color key="backgroundColor" name="SecondaryColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AKf-m2-LDH">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong, please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xI-73-qii">
+                                        <rect key="frame" x="8" y="272" width="376" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y2o-kn-hTY">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong, please try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xI-73-qii">
-                                <rect key="frame" x="10" y="44" width="394" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AvS-65-GhT">
-                                <rect key="frame" x="188.5" y="388" width="37" height="37"/>
-                                <color key="color" name="WhiteColor"/>
-                            </activityIndicatorView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AvS-65-GhT">
+                                        <rect key="frame" x="188.5" y="309" width="37" height="37"/>
+                                        <color key="color" name="WhiteColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pWs-Ng-RS7" firstAttribute="top" secondItem="MKG-2E-hBc" secondAttribute="top" id="68N-1b-gU3"/>
+                                    <constraint firstAttribute="trailing" secondItem="pWs-Ng-RS7" secondAttribute="trailing" id="F6l-ks-7mq"/>
+                                    <constraint firstItem="AvS-65-GhT" firstAttribute="centerY" secondItem="MKG-2E-hBc" secondAttribute="centerY" id="gdj-CG-Fh8"/>
+                                    <constraint firstAttribute="bottom" secondItem="pWs-Ng-RS7" secondAttribute="bottom" id="hwA-Ys-65I"/>
+                                    <constraint firstItem="pWs-Ng-RS7" firstAttribute="leading" secondItem="MKG-2E-hBc" secondAttribute="leading" id="naY-Ao-Cip"/>
+                                    <constraint firstItem="AvS-65-GhT" firstAttribute="centerX" secondItem="MKG-2E-hBc" secondAttribute="centerX" id="skc-tt-gTh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h6s-D7-Ywe"/>
                         <color key="backgroundColor" name="SecondaryColor"/>
                         <constraints>
-                            <constraint firstItem="h6s-D7-Ywe" firstAttribute="bottom" secondItem="pWs-Ng-RS7" secondAttribute="bottom" id="IMU-sw-QBm"/>
-                            <constraint firstItem="AvS-65-GhT" firstAttribute="centerY" secondItem="vxe-jK-EUv" secondAttribute="centerY" id="Pb6-SE-bfL"/>
-                            <constraint firstItem="pWs-Ng-RS7" firstAttribute="top" secondItem="h6s-D7-Ywe" secondAttribute="top" id="XSX-8r-IRv"/>
-                            <constraint firstItem="h6s-D7-Ywe" firstAttribute="trailing" secondItem="pWs-Ng-RS7" secondAttribute="trailing" constant="10" id="bnV-xF-Qo6"/>
-                            <constraint firstItem="AvS-65-GhT" firstAttribute="centerX" secondItem="vxe-jK-EUv" secondAttribute="centerX" id="ioO-da-d1f"/>
-                            <constraint firstItem="pWs-Ng-RS7" firstAttribute="leading" secondItem="h6s-D7-Ywe" secondAttribute="leading" constant="10" id="r4L-Zn-Hcl"/>
+                            <constraint firstItem="MKG-2E-hBc" firstAttribute="leading" secondItem="vxe-jK-EUv" secondAttribute="leading" id="DGj-7N-hs6"/>
+                            <constraint firstItem="bfS-VJ-OG5" firstAttribute="leading" secondItem="vxe-jK-EUv" secondAttribute="leading" id="OUJ-qF-XDL"/>
+                            <constraint firstAttribute="trailing" secondItem="bfS-VJ-OG5" secondAttribute="trailing" id="cLD-pF-Zqf"/>
+                            <constraint firstItem="bfS-VJ-OG5" firstAttribute="top" secondItem="h6s-D7-Ywe" secondAttribute="top" id="cMt-Ln-Up3"/>
+                            <constraint firstItem="MKG-2E-hBc" firstAttribute="top" secondItem="bfS-VJ-OG5" secondAttribute="bottom" id="dc1-OD-p51"/>
+                            <constraint firstAttribute="trailing" secondItem="MKG-2E-hBc" secondAttribute="trailing" id="eTM-ln-NzF"/>
+                            <constraint firstItem="h6s-D7-Ywe" firstAttribute="bottom" secondItem="MKG-2E-hBc" secondAttribute="bottom" id="iQq-hY-CFx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c1o-Hv-7Oa"/>
                     <connections>
                         <outlet property="cardListCollectionView" destination="pWs-Ng-RS7" id="pkP-CY-eLb"/>
                         <outlet property="cardListSearchBar" destination="kQh-F2-oJH" id="RAu-qR-Fjm"/>
+                        <outlet property="categoryListCollectionView" destination="Vpa-r5-jcw" id="g88-YV-NTY"/>
                         <outlet property="errorMessageLabel" destination="6xI-73-qii" id="olG-d7-qFQ"/>
                         <outlet property="loadingCardListIndicatorView" destination="AvS-65-GhT" id="41f-0E-fjm"/>
                     </connections>

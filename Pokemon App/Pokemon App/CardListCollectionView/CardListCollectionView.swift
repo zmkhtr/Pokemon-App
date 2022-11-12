@@ -23,13 +23,14 @@ extension CardListCollectionView: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
         
-        let pokemonCard = pokemonList[indexPath.row]
-        
-        cell.downloadImage(imageURL: pokemonCard.imageURL)
-        
-        
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let pokemonCard = pokemonList[indexPath.row]
+        let cell = cell as! CardCollectionViewCell
+        cell.downloadImage(imageURL: pokemonCard.imageURL)
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -42,7 +43,7 @@ extension CardListCollectionView: UICollectionViewDataSource {
 extension CardListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let padding: CGFloat =  10
+        let padding: CGFloat =  30
         let collectionViewSize = collectionView.frame.size.width - padding
         let width = collectionViewSize/2
         return CGSize(width: width, height: width * 3 / 2)
@@ -54,6 +55,11 @@ extension CardListCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 }
 
