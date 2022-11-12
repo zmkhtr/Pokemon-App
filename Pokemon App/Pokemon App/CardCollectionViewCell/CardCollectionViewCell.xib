@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,11 +25,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-Cp-LmC">
                                 <rect key="frame" x="0.0" y="0.0" width="126" height="157"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv0-oi-h7r">
+                                <rect key="frame" x="2.5" y="51.5" width="121" height="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" name="WhiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrs-Io-CPq">
+                                <rect key="frame" x="21" y="83" width="84.5" height="31"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Try Again"/>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Jrs-Io-CPq" firstAttribute="centerY" secondItem="46D-oi-YLI" secondAttribute="centerY" constant="20" id="3kK-jd-Cpz"/>
                             <constraint firstAttribute="trailing" secondItem="aK8-Cp-LmC" secondAttribute="trailing" id="3uh-cP-lvs"/>
                             <constraint firstAttribute="bottom" secondItem="aK8-Cp-LmC" secondAttribute="bottom" id="Lht-Pc-2d3"/>
+                            <constraint firstItem="Jrs-Io-CPq" firstAttribute="centerX" secondItem="46D-oi-YLI" secondAttribute="centerX" id="M0f-vm-sdq"/>
                             <constraint firstItem="aK8-Cp-LmC" firstAttribute="leading" secondItem="46D-oi-YLI" secondAttribute="leading" id="Sf1-aT-G31"/>
+                            <constraint firstItem="Dv0-oi-h7r" firstAttribute="centerY" secondItem="46D-oi-YLI" secondAttribute="centerY" constant="-20" id="bCe-90-Bcw"/>
+                            <constraint firstItem="Dv0-oi-h7r" firstAttribute="centerX" secondItem="46D-oi-YLI" secondAttribute="centerX" id="dn9-ag-0yG"/>
                             <constraint firstItem="aK8-Cp-LmC" firstAttribute="top" secondItem="46D-oi-YLI" secondAttribute="top" id="qGo-gm-jc7"/>
                         </constraints>
                     </view>
@@ -42,10 +59,20 @@
             </constraints>
             <size key="customSize" width="126" height="157"/>
             <connections>
+                <outlet property="errorButton" destination="Jrs-Io-CPq" id="dch-b6-ehE"/>
+                <outlet property="errorLabel" destination="Dv0-oi-h7r" id="339-wL-Gai"/>
                 <outlet property="imageContainerView" destination="46D-oi-YLI" id="3mQ-yk-OPc"/>
                 <outlet property="pokemonCardImageView" destination="aK8-Cp-LmC" id="mlk-ZE-NbU"/>
             </connections>
             <point key="canvasLocation" x="152" y="-61"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="WhiteColor">
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
