@@ -12,6 +12,11 @@ class FavouritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
     }
+    
+    //MARK: Search Bar
+    
+    let searchController = UISearchController()
+    
 }
