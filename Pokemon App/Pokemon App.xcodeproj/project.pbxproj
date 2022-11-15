@@ -8,13 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D09C09C291CDC0500EA5D8F /* PokemonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */; };
-		5D5D700B2923A2B000B7E630 /* QTPokemonCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D700A2923A2B000B7E630 /* QTPokemonCardsModel.swift */; };
-		5D5D700F2923A42C00B7E630 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D700D2923A42C00B7E630 /* CardCollectionViewCell.swift */; };
-		5D5D70102923A42C00B7E630 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D700E2923A42C00B7E630 /* CardCollectionViewCell.xib */; };
 		5D8E8505291FB0070081CFC2 /* CardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E8504291FB0070081CFC2 /* CardListController.swift */; };
 		5D8E8508291FB30B0081CFC2 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E8507291FB30B0081CFC2 /* FavouritesViewController.swift */; };
-		5D8E850B291FD16C0081CFC2 /* PokemonCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E850A291FD16C0081CFC2 /* PokemonCardsModel.swift */; };
-		5D8E850D291FD7670081CFC2 /* PokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E850C291FD7670081CFC2 /* PokemonLoader.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ViewController.swift */; };
@@ -25,13 +20,8 @@
 
 /* Begin PBXFileReference section */
 		5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabBarController.swift; sourceTree = "<group>"; };
-		5D5D700A2923A2B000B7E630 /* QTPokemonCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTPokemonCardsModel.swift; sourceTree = "<group>"; };
-		5D5D700D2923A42C00B7E630 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		5D5D700E2923A42C00B7E630 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		5D8E8504291FB0070081CFC2 /* CardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListController.swift; sourceTree = "<group>"; };
 		5D8E8507291FB30B0081CFC2 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
-		5D8E850A291FD16C0081CFC2 /* PokemonCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardsModel.swift; sourceTree = "<group>"; };
-		5D8E850C291FD7670081CFC2 /* PokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLoader.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,20 +51,10 @@
 			path = PokemonTabBarController;
 			sourceTree = "<group>";
 		};
-		5D5D700C2923A35A00B7E630 /* CardsCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				5D5D700D2923A42C00B7E630 /* CardCollectionViewCell.swift */,
-				5D5D700E2923A42C00B7E630 /* CardCollectionViewCell.xib */,
-			);
-			path = CardsCollectionView;
-			sourceTree = "<group>";
-		};
 		5D8E8503291FAFD60081CFC2 /* CardListController */ = {
 			isa = PBXGroup;
 			children = (
 				5D8E8504291FB0070081CFC2 /* CardListController.swift */,
-				5D8E850C291FD7670081CFC2 /* PokemonLoader.swift */,
 			);
 			path = CardListController;
 			sourceTree = "<group>";
@@ -85,15 +65,6 @@
 				5D8E8507291FB30B0081CFC2 /* FavouritesViewController.swift */,
 			);
 			path = FavouritesViewController;
-			sourceTree = "<group>";
-		};
-		5D8E8509291FD1570081CFC2 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				5D8E850A291FD16C0081CFC2 /* PokemonCardsModel.swift */,
-				5D5D700A2923A2B000B7E630 /* QTPokemonCardsModel.swift */,
-			);
-			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		BF6745AB2902DBB300B9818C = {
@@ -115,8 +86,6 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
-				5D5D700C2923A35A00B7E630 /* CardsCollectionView */,
-				5D8E8509291FD1570081CFC2 /* Data Model */,
 				5D8E8506291FB2D30081CFC2 /* FavouritesViewController */,
 				5D8E8503291FAFD60081CFC2 /* CardListController */,
 				5D09C09A291CDBD200EA5D8F /* PokemonTabBarController */,
@@ -188,7 +157,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5D70102923A42C00B7E630 /* CardCollectionViewCell.xib in Resources */,
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
@@ -206,11 +174,7 @@
 				BF6745BC2902DBB300B9818C /* ViewController.swift in Sources */,
 				5D09C09C291CDC0500EA5D8F /* PokemonTabBarController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
-				5D8E850B291FD16C0081CFC2 /* PokemonCardsModel.swift in Sources */,
 				5D8E8505291FB0070081CFC2 /* CardListController.swift in Sources */,
-				5D5D700B2923A2B000B7E630 /* QTPokemonCardsModel.swift in Sources */,
-				5D8E850D291FD7670081CFC2 /* PokemonLoader.swift in Sources */,
-				5D5D700F2923A42C00B7E630 /* CardCollectionViewCell.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,21 +17,8 @@
                     <view key="view" contentMode="scaleToFill" id="pG5-hj-nWq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akG-JX-WpN">
-                                <rect key="frame" x="0.0" y="133" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Favourites" id="dhQ-OJ-08w"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="T0f-Qk-C80"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="akG-JX-WpN" firstAttribute="top" secondItem="T0f-Qk-C80" secondAttribute="top" constant="30" id="1La-HX-HJy"/>
-                            <constraint firstAttribute="trailing" secondItem="akG-JX-WpN" secondAttribute="trailing" id="DfG-p4-BlC"/>
-                            <constraint firstItem="akG-JX-WpN" firstAttribute="leading" secondItem="T0f-Qk-C80" secondAttribute="leading" id="uOk-FV-1Uj"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CRG-go-eOA"/>
                 </viewController>
@@ -51,43 +37,16 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jko-EZ-kTk">
                                 <rect key="frame" x="0.0" y="133" width="393" height="44"/>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
-                                <rect key="frame" x="0.0" y="177" width="393" height="592"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6P4-dp-dkF">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tgz-de-Aq9">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jxG-PQ-hun">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="2I6-9R-mF1"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="NWt-5j-sH8"/>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="XZb-Ug-fSa"/>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="30" id="Xmy-la-2DI"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="bottom" secondItem="uIU-CM-IYK" secondAttribute="bottom" id="bLe-sE-M8J"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="Jko-EZ-kTk" secondAttribute="bottom" id="exx-jc-lPe"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="hML-Lz-R5C"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
-                    <connections>
-                        <outlet property="cardListCollectionView" destination="hfb-Kp-l78" id="TBY-j5-MVd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngd-Nw-mTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,6 +75,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fVp-Rk-ete">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vl1-hB-DhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4oS-a8-esD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="greetingcard" catalog="system" selectedImage="greetingcard.fill" id="duR-bf-rDL"/>
                     <toolbarItems/>
@@ -128,13 +88,13 @@
                         <segue destination="JS8-xY-Twe" kind="relationship" relationship="rootViewController" id="bdV-VS-G40"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vl1-hB-DhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2006.8702290076335" y="-337.32394366197184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cT2-Ms-aoN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IH0-D8-hRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vVc-Rt-LNR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" selectedImage="heart.fill" id="FSE-RE-6NT"/>
                     <toolbarItems/>
@@ -147,7 +107,6 @@
                         <segue destination="jx7-Me-kNz" kind="relationship" relationship="rootViewController" id="dxp-Qc-nch"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IH0-D8-hRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2006.8702290076335" y="410.56338028169017"/>
         </scene>
