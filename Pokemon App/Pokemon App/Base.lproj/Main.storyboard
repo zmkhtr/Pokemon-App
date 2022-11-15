@@ -4,8 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,24 +50,45 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jko-EZ-kTk">
                                 <rect key="frame" x="0.0" y="133" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Card List" id="le1-My-Cpe"/>
-                                </items>
                             </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
+                                <rect key="frame" x="0.0" y="177" width="393" height="592"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6P4-dp-dkF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tgz-de-Aq9">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jxG-PQ-hun">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="2I6-9R-mF1"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="NWt-5j-sH8"/>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="XZb-Ug-fSa"/>
                             <constraint firstItem="Jko-EZ-kTk" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="30" id="Xmy-la-2DI"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="bottom" secondItem="uIU-CM-IYK" secondAttribute="bottom" id="bLe-sE-M8J"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="Jko-EZ-kTk" secondAttribute="bottom" id="exx-jc-lPe"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="hML-Lz-R5C"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngd-Nw-mTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2933.5877862595416" y="-337.32394366197184"/>
+            <point key="canvasLocation" x="2932.06106870229" y="-337.32394366197184"/>
         </scene>
         <!--Pokemon Tab Bar Controller-->
         <scene sceneID="DbK-UX-vum">
@@ -75,7 +98,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="wt0-FT-z4z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="#222831"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -131,6 +154,9 @@
         <image name="greetingcard.fill" catalog="system" width="105" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <namedColor name="#222831">
+            <color red="0.13300000000000001" green="0.157" blue="0.192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

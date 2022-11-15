@@ -15,8 +15,12 @@ class CardListViewController: UIViewController {
         navigationItem.searchController = searchController
     }
     
-    //MARK: Search Bar
+//MARK: Search Bar
     
     let searchController = UISearchController()
     
+//MARK: NETWORKING
+    
+    
+        
 }
