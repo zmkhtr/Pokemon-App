@@ -8,7 +8,6 @@
 import Foundation
 
 struct QTPokemonCardsModel: Decodable {
-    let qTPokemonCards: [RemotePokemonCard]
 }
 
 // MARK: - CardList

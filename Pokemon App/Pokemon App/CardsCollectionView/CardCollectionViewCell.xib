@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="128" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyP-1z-7Xw">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PikachuCard" translatesAutoresizingMaskIntoConstraints="NO" id="CyP-1z-7Xw">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="160"/>
                     </imageView>
                 </subviews>
@@ -36,4 +36,7 @@
             <point key="canvasLocation" x="105.34351145038167" y="58.450704225352112"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="PikachuCard" width="441" height="623"/>
+    </resources>
 </document>
