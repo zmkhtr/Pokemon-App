@@ -85,6 +85,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
+                    <connections>
+                        <outlet property="cardListCollectionView" destination="hfb-Kp-l78" id="TBY-j5-MVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngd-Nw-mTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +158,7 @@
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <namedColor name="#222831">
-            <color red="0.13300000000000001" green="0.157" blue="0.192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13300000131130219" green="0.15700000524520874" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

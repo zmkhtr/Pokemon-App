@@ -8,19 +8,22 @@
 import Foundation
 import UIKit
 
-class CardListViewController: UIViewController {
+class CardListViewController: UIViewController, UICollectionViewDelegate {
     
+    @IBOutlet weak var cardListCollectionView: UICollectionView!
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.searchController = searchController
+        
+        }
+        
     }
     
 //MARK: Search Bar
     
     let searchController = UISearchController()
-    
-//MARK: NETWORKING
-    
-    
-        
-}
+
+
+
