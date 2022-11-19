@@ -39,7 +39,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                 case .success(let downloadedImage):
                     self.successDownloadImage(downloadedImage)
                 case .failure:
-                    print("Error Downloading Image")
+                    self.failedDownloadImage()
                 }
             }
         }
