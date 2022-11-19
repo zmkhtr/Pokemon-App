@@ -17,21 +17,20 @@ class CategoryListLoader {
         let url = URL(string: "https://api.pokemontcg.io/v2/types")!
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.sync {
-                do {
-                    if let data = data,
-                       let response = response as? HTTPURLResponse,
-                       response.statusCode == 200 {
-                        let listOfPokemon = try self.transformJsonDataToListOfPokemonCard(with: data)
-                        completion(.success(listOfPokemon))
-                    } else {
-                        completion(.failure(CustomError.unexpectedData))
-                        
-                    }
-                } catch let error {
-                    completion(.failure(error))
+            do {
+                if let data = data,
+                   let response = response as? HTTPURLResponse,
+                   response.statusCode == 200 {
+                    let listOfPokemon = try self.transformJsonDataToListOfPokemonCard(with: data)
+                    completion(.success(listOfPokemon))
+                } else {
+                    completion(.failure(CustomError.unexpectedData))
+                    
                 }
+            } catch let error {
+                completion(.failure(error))
             }
+            
         }.resume()
     }
     

@@ -37,25 +37,58 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-VJ-OG5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="70"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-r5-jcw" customClass="CategoryListCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kug-Gy-wVP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                        <color key="backgroundColor" name="SecondaryColor"/>
-                                        <color key="tintColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj6-4J-4gj">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-r5-jcw" customClass="CategoryListCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                <color key="backgroundColor" name="SecondaryColor"/>
+                                                <color key="tintColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj6-4J-4gj">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="ONu-PE-691">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" name="WhiteColor"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error fetching category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2p-Ad-h5P">
+                                                <rect key="frame" x="132.5" y="16.5" width="149.5" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fav-Go-lbu">
+                                                <rect key="frame" x="158" y="29.5" width="98.5" height="31"/>
+                                                <color key="tintColor" name="WhiteColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Tap to retry"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fav-Go-lbu" firstAttribute="centerY" secondItem="kug-Gy-wVP" secondAttribute="centerY" constant="10" id="2dk-La-6v7"/>
+                                            <constraint firstItem="r2p-Ad-h5P" firstAttribute="centerX" secondItem="kug-Gy-wVP" secondAttribute="centerX" id="6xQ-Zc-CMV"/>
+                                            <constraint firstItem="Vpa-r5-jcw" firstAttribute="leading" secondItem="kug-Gy-wVP" secondAttribute="leading" id="Mee-qU-KhE"/>
+                                            <constraint firstItem="fav-Go-lbu" firstAttribute="centerX" secondItem="kug-Gy-wVP" secondAttribute="centerX" id="OpE-Ss-OnA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vpa-r5-jcw" secondAttribute="trailing" id="mgE-FX-fOm"/>
+                                            <constraint firstItem="Vpa-r5-jcw" firstAttribute="top" secondItem="kug-Gy-wVP" secondAttribute="top" id="nz2-I8-b5v"/>
+                                            <constraint firstItem="r2p-Ad-h5P" firstAttribute="centerY" secondItem="kug-Gy-wVP" secondAttribute="centerY" constant="-10" id="pcG-g0-Mqd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vpa-r5-jcw" secondAttribute="bottom" id="zaC-87-Vjt"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="kug-Gy-wVP" firstAttribute="top" secondItem="bfS-VJ-OG5" secondAttribute="top" id="5cr-OO-YUl"/>
                                     <constraint firstAttribute="height" constant="70" id="8mN-M4-hxd"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vpa-r5-jcw" secondAttribute="trailing" id="F88-jf-3fG"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vpa-r5-jcw" secondAttribute="bottom" id="ISK-a1-a81"/>
-                                    <constraint firstItem="Vpa-r5-jcw" firstAttribute="leading" secondItem="bfS-VJ-OG5" secondAttribute="leading" id="LEx-Ng-FIs"/>
-                                    <constraint firstItem="Vpa-r5-jcw" firstAttribute="top" secondItem="bfS-VJ-OG5" secondAttribute="top" id="pFq-dy-mEQ"/>
+                                    <constraint firstItem="kug-Gy-wVP" firstAttribute="leading" secondItem="bfS-VJ-OG5" secondAttribute="leading" id="CaO-Hq-IlX"/>
+                                    <constraint firstAttribute="bottom" secondItem="kug-Gy-wVP" secondAttribute="bottom" id="Uxe-Wk-ufu"/>
+                                    <constraint firstAttribute="trailing" secondItem="kug-Gy-wVP" secondAttribute="trailing" id="mqa-Av-e0a"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKG-2E-hBc">
@@ -111,8 +144,11 @@
                         <outlet property="cardListCollectionView" destination="pWs-Ng-RS7" id="pkP-CY-eLb"/>
                         <outlet property="cardListSearchBar" destination="kQh-F2-oJH" id="RAu-qR-Fjm"/>
                         <outlet property="categoryListCollectionView" destination="Vpa-r5-jcw" id="g88-YV-NTY"/>
+                        <outlet property="errorCategoriesLabel" destination="r2p-Ad-h5P" id="2Td-W6-Alk"/>
                         <outlet property="errorMessageLabel" destination="6xI-73-qii" id="olG-d7-qFQ"/>
                         <outlet property="loadingCardListIndicatorView" destination="AvS-65-GhT" id="41f-0E-fjm"/>
+                        <outlet property="loadingCategoriesIndicator" destination="ONu-PE-691" id="8p0-w0-TgS"/>
+                        <outlet property="retryCategoriesButton" destination="fav-Go-lbu" id="FqH-og-NTt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrJ-dW-khY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -192,6 +228,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
