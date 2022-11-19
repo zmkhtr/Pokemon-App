@@ -30,8 +30,12 @@ extension CardListCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let pokemonCard = pokemonList[indexPath.row]
         let cell = cell as! CardCollectionViewCell
-        cell.pokemonImageURL = pokemonCard.imageURL
-        cell.downloadImage()
+        if let image = pokemonCard.image {
+            cell.pokemonCardImageView.image = image
+        } else {
+            cell.pokemonImageURL = pokemonCard.imageURL
+            cell.downloadImage()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -66,6 +70,29 @@ extension CardListCollectionView: UICollectionViewDelegateFlowLayout {
 
 // MARK: - UICollectionViewDelegate
 extension CardListCollectionView: UICollectionViewDelegate {
+}
+
+// MARK: - UICollectionViewDataSourcePrefetching
+extension CardListCollectionView: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for index in indexPaths {
+            let pokemon = pokemonList[index.row]
+            if let _ = pokemon.image {
+                return
+            }
+            pokemon.downloadImage()
+        }
+    }
+    
+    func col_ew(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        for index in indexPaths {
+            let pokemon = pokemonList[index.row]
+            if let _ = pokemon.image {
+                pokemon.cancelDownloadImage()
+            }
+        }
+    }
+    
 }
 
 

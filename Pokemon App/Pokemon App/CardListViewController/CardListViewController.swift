@@ -78,6 +78,7 @@ class CardListViewController: UIViewController {
     private func setUpCardListCollectionView() {
         cardListCollectionView.delegate = cardListCollectionView.self
         cardListCollectionView.dataSource = cardListCollectionView.self
+        cardListCollectionView.prefetchDataSource = cardListCollectionView.self
         cardListCollectionView.refreshControl = refreshControl
         cardListCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")        
     }

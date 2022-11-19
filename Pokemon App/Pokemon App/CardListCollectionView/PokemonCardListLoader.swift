@@ -48,7 +48,7 @@ class PokemonCardListLoader {
     }
     
     private func map(remotePokemon: RemotePokemonCard) -> PokemonCard {
-        return PokemonCard(id: remotePokemon.id, imageURL: remotePokemon.images.large)
+        return PokemonCard(id: remotePokemon.id, imageURL: remotePokemon.images.large, image: nil)
     }
 }
 
