@@ -14,6 +14,10 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var loadingCardListIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var categoryListCollectionView: CategoryListCollectionView!
+    @IBOutlet weak var errorCategoriesLabel: UILabel!
+    @IBOutlet weak var retryCategoriesButton: UIButton!
+    @IBOutlet weak var loadingCategoriesIndicator: UIActivityIndicatorView!
+    
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -125,6 +129,7 @@ class CardListViewController: UIViewController {
     
     private func loadCategories() {
         let loader = CategoryListLoader()
+        startLoadCategories()
         loader.getCategories { result in
             switch result {
             case .success(let categoriesListResult):
@@ -135,8 +140,19 @@ class CardListViewController: UIViewController {
         }
     }
     
+    private func startLoadCategories() {
+        DispatchQueue.main.async {
+            self.loadingCategoriesIndicator.isHidden = false
+            self.errorCategoriesLabel.isHidden = true
+            self.retryCategoriesButton.isHidden = true
+        }
+    }
+    
     private func successLoadCategories(_ pokemonListResult: [String]) {
         DispatchQueue.main.async {
+            self.loadingCategoriesIndicator.isHidden = true
+            self.errorCategoriesLabel.isHidden = true
+            self.retryCategoriesButton.isHidden = true
             self.categoryListCollectionView.categoryList = pokemonListResult
             self.categoryListCollectionView.selectedCategory = pokemonListResult.count > 0 ? pokemonListResult.first! : ""
             self.categoryListCollectionView.reloadData()
@@ -144,9 +160,8 @@ class CardListViewController: UIViewController {
     }
     
     private func failedLoadCategories(_ err: String) {
-        // TODO: failed categories??
+        self.loadingCategoriesIndicator.isHidden = true
+        self.errorCategoriesLabel.isHidden = false
+        self.retryCategoriesButton.isHidden = false
     }
-
-    
-    
 }
