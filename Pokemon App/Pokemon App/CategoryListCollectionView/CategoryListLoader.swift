@@ -24,7 +24,7 @@ class CategoryListLoader {
                     let listOfPokemon = try self.transformJsonDataToListOfPokemonCard(with: data)
                     completion(.success(listOfPokemon))
                 } else {
-                    completion(.failure(CustomError.unexpectedData))
+                    completion(.failure(NetworkError.unexpectedData))
                     
                 }
             } catch let error {
@@ -43,7 +43,7 @@ class CategoryListLoader {
     
 }
 
-enum CustomError: Error {
+enum NetworkError: Error {
     case unexpectedData
 }
 
