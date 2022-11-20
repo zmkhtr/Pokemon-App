@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListPokemonView" customModule="Pokemon_App" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="KBF-y0-g30" id="28j-2U-GBW"/>
+                <outlet property="errorStackView" destination="M7P-5H-eNb" id="FYj-oc-ATm"/>
+                <outlet property="loadingIndicatorView" destination="VHj-fZ-YCi" id="Tic-Au-yvU"/>
+                <outlet property="pokemonCollectionView" destination="pg7-Vm-iRy" id="Xa9-ue-NMY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KBF-y0-g30">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-Vm-iRy">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kbf-e8-pvy">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-5H-eNb">
+                    <rect key="frame" x="16" y="418.5" width="382" height="59.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6u-Pg-aJR">
+                            <rect key="frame" x="103.5" y="0.0" width="175.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZB-dx-CDv">
+                            <rect key="frame" x="157" y="28.5" width="68.5" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Reload">
+                                <color key="baseBackgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-fZ-YCi">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="M7P-5H-eNb" firstAttribute="centerY" secondItem="KBF-y0-g30" secondAttribute="centerY" id="1fb-AC-5eI"/>
+                <constraint firstItem="VHj-fZ-YCi" firstAttribute="centerY" secondItem="KBF-y0-g30" secondAttribute="centerY" id="8rg-Iw-TcJ"/>
+                <constraint firstItem="M7P-5H-eNb" firstAttribute="centerX" secondItem="KBF-y0-g30" secondAttribute="centerX" id="BBc-5x-Uwc"/>
+                <constraint firstItem="M7P-5H-eNb" firstAttribute="leading" secondItem="KBF-y0-g30" secondAttribute="leading" constant="16" id="BTa-Ht-dlI"/>
+                <constraint firstItem="pg7-Vm-iRy" firstAttribute="top" secondItem="KBF-y0-g30" secondAttribute="top" id="Guv-ud-L26"/>
+                <constraint firstItem="VHj-fZ-YCi" firstAttribute="centerX" secondItem="KBF-y0-g30" secondAttribute="centerX" id="HgE-gx-mDN"/>
+                <constraint firstItem="pg7-Vm-iRy" firstAttribute="leading" secondItem="KBF-y0-g30" secondAttribute="leading" id="OGp-Ny-EPA"/>
+                <constraint firstAttribute="trailing" secondItem="M7P-5H-eNb" secondAttribute="trailing" constant="16" id="eIf-Gr-Y4f"/>
+                <constraint firstAttribute="trailing" secondItem="pg7-Vm-iRy" secondAttribute="trailing" id="gHE-W4-mFh"/>
+                <constraint firstAttribute="bottom" secondItem="pg7-Vm-iRy" secondAttribute="bottom" id="jfc-e8-cKL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-303" y="213"/>
+        </view>
+    </objects>
+</document>

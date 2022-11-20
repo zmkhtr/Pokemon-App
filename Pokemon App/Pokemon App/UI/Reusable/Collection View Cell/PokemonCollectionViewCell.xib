@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PokemonCollectionViewCell" customModule="Pokemon_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-tX-qBd">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-6j-7RE">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="18Z-6j-7RE" secondAttribute="bottom" id="Zip-Dr-tYo"/>
+                            <constraint firstItem="18Z-6j-7RE" firstAttribute="leading" secondItem="wkf-tX-qBd" secondAttribute="leading" id="cdv-RF-qgy"/>
+                            <constraint firstItem="18Z-6j-7RE" firstAttribute="top" secondItem="wkf-tX-qBd" secondAttribute="top" id="gLj-at-IN0"/>
+                            <constraint firstAttribute="trailing" secondItem="18Z-6j-7RE" secondAttribute="trailing" id="vMT-MS-ef0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="wkf-tX-qBd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YMb-cz-f1c"/>
+                <constraint firstAttribute="bottom" secondItem="wkf-tX-qBd" secondAttribute="bottom" id="qeu-d0-cil"/>
+                <constraint firstAttribute="trailing" secondItem="wkf-tX-qBd" secondAttribute="trailing" id="vfY-XL-k6J"/>
+                <constraint firstItem="wkf-tX-qBd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yav-nS-zT7"/>
+            </constraints>
+            <connections>
+                <outlet property="containerView" destination="wkf-tX-qBd" id="eT6-Qb-rLe"/>
+                <outlet property="pokemonImageView" destination="18Z-6j-7RE" id="Rvg-e6-sB8"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="96"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
