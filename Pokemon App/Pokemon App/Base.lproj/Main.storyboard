@@ -57,16 +57,16 @@
                         <viewLayoutGuide key="safeArea" id="pE2-0O-0NB"/>
                         <color key="backgroundColor" name="MainBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="favorite-inactive" selectedImage="favorite-active" id="Oft-tv-PQs"/>
+                    <tabBarItem key="tabBarItem" title="" image="favorite-inactive" id="Oft-tv-PQs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sV0-Of-y7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="486" y="761"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="U0S-ET-U4f">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6o6-B1-RFc" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6o6-B1-RFc" customClass="CustomTabBarController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gAy-Bv-nUE">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -87,7 +87,7 @@
         <scene sceneID="ehc-Yg-Ek3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cuC-3H-jMt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="list-inactive" selectedImage="list-active" id="HMj-Vp-kep"/>
+                    <tabBarItem key="tabBarItem" title="" image="list-active" id="HMj-Vp-kep"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QCQ-Hc-1kH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -104,10 +104,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favorite-active" width="18.5" height="17"/>
         <image name="favorite-inactive" width="18.5" height="17"/>
         <image name="list-active" width="15" height="21"/>
-        <image name="list-inactive" width="15.5" height="21"/>
         <namedColor name="MainBackgroundColor">
             <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
