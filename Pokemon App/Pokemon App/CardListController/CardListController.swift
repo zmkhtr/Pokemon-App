@@ -12,11 +12,11 @@ class CardListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.searchController = searchController
+        
+        }
+        
     }
     
-    //MARK: Search Bar
-    
-    let searchController = UISearchController()
-    
-}
+
+
+
