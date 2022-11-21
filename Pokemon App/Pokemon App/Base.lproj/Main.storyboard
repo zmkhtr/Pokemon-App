@@ -45,21 +45,8 @@
                     <view key="view" contentMode="scaleToFill" id="L9K-9D-Krg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jko-EZ-kTk">
-                                <rect key="frame" x="0.0" y="133" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Card List" id="le1-My-Cpe"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Jko-EZ-kTk" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="2I6-9R-mF1"/>
-                            <constraint firstItem="Jko-EZ-kTk" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="XZb-Ug-fSa"/>
-                            <constraint firstItem="Jko-EZ-kTk" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="30" id="Xmy-la-2DI"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
                 </viewController>
