@@ -20,8 +20,15 @@ enum LoadingImageResult {
     case failure(String)
 }
 
+enum ListPokemonTypeResult {
+    case loading(Bool)
+    case success(ListPokemonType)
+    case failure(String)
+}
+
 protocol PokemonLoader {
     func getListPokemon(currentPage: Int, pageSize: Int, completion: @escaping (ListPokemonResult) -> ())
+    func getListPokemonType(completion: @escaping (ListPokemonTypeResult) -> ())
 }
 
 class PokemonLoaderImpl : PokemonLoader {
@@ -42,6 +49,28 @@ class PokemonLoaderImpl : PokemonLoader {
                     let result = try JSONDecoder().decode(ListPokemonResponse.self, from: data)
                     let response = ObjectMapper().mapListPokemonResponseToListPokemonDomain(listPokemonResponse: result.data)
                     completion(.success(response))
+                } catch {
+                    completion(.failure("Failed to convert"))
+                }
+            }
+        }.resume()
+    }
+    
+    func getListPokemonType(completion: @escaping (ListPokemonTypeResult) -> ()) {
+        let url = URL(string: "https://api.pokemontcg.io/v2/types")!
+        
+        completion(.loading(true))
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    completion(.failure("Data not found"))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(ListPokemonType.self, from: data)
+                    completion(.success(result))
                 } catch {
                     completion(.failure("Failed to convert"))
                 }

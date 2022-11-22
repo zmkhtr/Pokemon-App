@@ -7,13 +7,11 @@
 
 import Foundation
 
-// MARK: - List Pokemon Response
 struct ListPokemonResponse: Codable {
     let data: [PokemonResponse]
     let page, pageSize, count, totalCount: Int
 }
 
-// MARK: - Pokemon Response
 struct PokemonResponse: Codable {
     let id, name: String
     let images: PokemonResponseImages
@@ -24,8 +22,6 @@ struct PokemonResponse: Codable {
     }
 }
 
-
-// MARK: - PokemonResponseImages
 struct PokemonResponseImages: Codable {
     let small, large: String
 }

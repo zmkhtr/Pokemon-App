@@ -49,6 +49,7 @@ class ListPokemonView: UIView {
             isShowError(true)
         }
     }
+    
 }
 
 
@@ -70,6 +71,7 @@ private extension ListPokemonView {
         pokemonCollectionView.dataSource = self
         pokemonCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         pokemonCollectionView.register(PokemonCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonCollectionViewCell.identifier)
+        pokemonCollectionView.showsHorizontalScrollIndicator = false
     }
     
     func configureRefreshControl() {
@@ -114,7 +116,7 @@ extension ListPokemonView : UICollectionViewDelegate {
 
 extension ListPokemonView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        listPokemon.count
+        return listPokemon.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,17 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MHF-VX-teQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" name="MainBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1rY-FY-8Ne"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gbH-na-VoX">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MG6-QN-3Yd">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ogy-Go-DNG">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XZ-lp-74n" customClass="ListPokemonView" customModule="Pokemon_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
                                 <color key="backgroundColor" name="MainBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="TabBarBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHF-VX-teQ" secondAttribute="trailing" id="3aH-DM-YxQ"/>
+                            <constraint firstItem="MHF-VX-teQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BEU-wC-4pe"/>
                             <constraint firstItem="7XZ-lp-74n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e0P-py-XPZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7XZ-lp-74n" secondAttribute="trailing" id="lG8-SX-kYW"/>
-                            <constraint firstItem="7XZ-lp-74n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rDd-Hp-0aU"/>
+                            <constraint firstItem="MHF-VX-teQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pU3-5w-vfF"/>
+                            <constraint firstItem="7XZ-lp-74n" firstAttribute="top" secondItem="MHF-VX-teQ" secondAttribute="bottom" id="sem-oW-7qw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7XZ-lp-74n" secondAttribute="bottom" id="ytw-RK-860"/>
                         </constraints>
                     </view>
@@ -35,6 +62,7 @@
                     <connections>
                         <outlet property="listPokemonView" destination="7XZ-lp-74n" id="X3M-Hz-Scm"/>
                         <outlet property="pokemonSearchBar" destination="cc9-cF-WXM" id="f3h-lk-yHp"/>
+                        <outlet property="pokemonTypeCollectionView" destination="MHF-VX-teQ" id="feb-QP-1U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
