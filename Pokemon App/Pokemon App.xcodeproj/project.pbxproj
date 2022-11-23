@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A1D7E97A292A8C5F003FCD6E /* FavoritePokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */; };
-		A1D7E97E292A9497003FCD6E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ListPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ListPokemonViewController.swift */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonViewController.swift; sourceTree = "<group>"; };
-		A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +42,6 @@
 		A1D7E97F292A954F003FCD6E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A1D7E982292A957B003FCD6E /* Custom Tab Bar */,
 				A1D7E981292A9566003FCD6E /* Favorite Pokemon */,
 				A1D7E980292A9557003FCD6E /* List Pokemon */,
 			);
@@ -65,14 +62,6 @@
 				A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */,
 			);
 			path = "Favorite Pokemon";
-			sourceTree = "<group>";
-		};
-		A1D7E982292A957B003FCD6E /* Custom Tab Bar */ = {
-			isa = PBXGroup;
-			children = (
-				A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */,
-			);
-			path = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
 		BF6745AB2902DBB300B9818C = {
@@ -177,7 +166,6 @@
 			files = (
 				BF6745BC2902DBB300B9818C /* ListPokemonViewController.swift in Sources */,
 				BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */,
-				A1D7E97E292A9497003FCD6E /* CustomTabBarController.swift in Sources */,
 				A1D7E97A292A8C5F003FCD6E /* FavoritePokemonViewController.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
 			);
