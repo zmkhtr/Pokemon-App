@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ListPokemonType : Codable {
+struct ListPokemonTypeResponse: Codable {
     let data: [String]
 }

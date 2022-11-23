@@ -2,11 +2,12 @@
 //  PokemonType.swift
 //  Pokemon App
 //
-//  Created by Mohammad Azri on 21/11/22.
+//  Created by Mohammad Azri on 23/11/22.
 //
 
 import Foundation
 
 struct PokemonType {
-    let types: [String]
+    let title: String
+    var isFavorite: Bool
 }

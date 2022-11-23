@@ -20,4 +20,10 @@ class ObjectMapper {
             )
         }
     }
+    
+    func mapListPokemonTypeResponseToListPokemonTypeDomain(listPokemonTypeResponse: ListPokemonTypeResponse) -> [PokemonType] {
+        listPokemonTypeResponse.data.map { type in
+            PokemonType(title: type, isFavorite: false)
+        }
+    }
 }

@@ -22,7 +22,7 @@ enum LoadingImageResult {
 
 enum ListPokemonTypeResult {
     case loading(Bool)
-    case success(ListPokemonType)
+    case success([PokemonType])
     case failure(String)
 }
 
@@ -63,14 +63,16 @@ class PokemonLoaderImpl : PokemonLoader {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
+                completion(.loading(false))
                 guard let data = data else {
                     completion(.failure("Data not found"))
                     return
                 }
                 
                 do {
-                    let result = try JSONDecoder().decode(ListPokemonType.self, from: data)
-                    completion(.success(result))
+                    let result = try JSONDecoder().decode(ListPokemonTypeResponse.self, from: data)
+                    let response = ObjectMapper().mapListPokemonTypeResponseToListPokemonTypeDomain(listPokemonTypeResponse: result)
+                    completion(.success(response))
                 } catch {
                     completion(.failure("Failed to convert"))
                 }
