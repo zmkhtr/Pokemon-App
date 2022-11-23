@@ -24,7 +24,6 @@
 		A1D173EB292AA817007B2D8E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D173EA292AA817007B2D8E /* UIView+Extension.swift */; };
 		A1D173ED292AA826007B2D8E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D173EC292AA826007B2D8E /* UIImageView+Extension.swift */; };
 		A1D7E97A292A8C5F003FCD6E /* FavoritePokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */; };
-		A1D7E97E292A9497003FCD6E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */; };
 		BF6745B82902DBB300B9818C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B72902DBB300B9818C /* AppDelegate.swift */; };
 		BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745B92902DBB300B9818C /* SceneDelegate.swift */; };
 		BF6745BC2902DBB300B9818C /* ListPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6745BB2902DBB300B9818C /* ListPokemonViewController.swift */; };
@@ -51,7 +50,6 @@
 		A1D173EA292AA817007B2D8E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A1D173EC292AA826007B2D8E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonViewController.swift; sourceTree = "<group>"; };
-		A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		BF6745B42902DBB300B9818C /* Pokemon App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6745B72902DBB300B9818C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6745B92902DBB300B9818C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				A1D173C9292AA280007B2D8E /* Reusable */,
-				A1D7E982292A957B003FCD6E /* Custom Tab Bar */,
 				A1D7E981292A9566003FCD6E /* Favorite Pokemon */,
 				A1D7E980292A9557003FCD6E /* List Pokemon */,
 			);
@@ -215,14 +212,6 @@
 				A1D7E979292A8C5F003FCD6E /* FavoritePokemonViewController.swift */,
 			);
 			path = "Favorite Pokemon";
-			sourceTree = "<group>";
-		};
-		A1D7E982292A957B003FCD6E /* Custom Tab Bar */ = {
-			isa = PBXGroup;
-			children = (
-				A1D7E97D292A9497003FCD6E /* CustomTabBarController.swift */,
-			);
-			path = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
 		BF6745AB2902DBB300B9818C = {
@@ -343,7 +332,6 @@
 				A1D173EB292AA817007B2D8E /* UIView+Extension.swift in Sources */,
 				A1D173E7292AA6CB007B2D8E /* PokemonLoader.swift in Sources */,
 				A1C2D76B292E58D200A76AE2 /* ListPokemonTypeView.swift in Sources */,
-				A1D7E97E292A9497003FCD6E /* CustomTabBarController.swift in Sources */,
 				A1D7E97A292A8C5F003FCD6E /* FavoritePokemonViewController.swift in Sources */,
 				A116F460292B14FF00E66025 /* ListPokemonTypeResponse.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,
@@ -494,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7PX2RYRJL;
+				DEVELOPMENT_TEAM = PKLN85RDQ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pokemon App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -524,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7PX2RYRJL;
+				DEVELOPMENT_TEAM = PKLN85RDQ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pokemon App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
