@@ -16,14 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XZ-lp-74n">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" name="MainBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="MainBackgroundColor"/>
+                        <color key="backgroundColor" name="TabBarBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7XZ-lp-74n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e0P-py-XPZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7XZ-lp-74n" secondAttribute="trailing" id="lG8-SX-kYW"/>
+                            <constraint firstItem="7XZ-lp-74n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rDd-Hp-0aU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7XZ-lp-74n" secondAttribute="bottom" id="ytw-RK-860"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="list-inactive" selectedImage="list-active" id="HMj-Vp-kep"/>
+                    <navigationItem key="navigationItem" id="sXS-6s-OTi"/>
+                    <connections>
+                        <outlet property="pokemonSearchBar" destination="cc9-cF-WXM" id="f3h-lk-yHp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" placeholder="Search" id="cc9-cF-WXM">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" name="TabBarBackgroundColor"/>
+                    <color key="tintColor" name="MainBackgroundColor"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
-            <point key="canvasLocation" x="486" y="33"/>
+            <point key="canvasLocation" x="1395.6521739130435" y="32.8125"/>
         </scene>
         <!--Favorite Pokemon View Controller-->
         <scene sceneID="8rs-eG-lhd">
@@ -53,13 +75,32 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bqw-hQ-2lS"/>
+                        <segue destination="cuC-3H-jMt" kind="relationship" relationship="viewControllers" id="bqw-hQ-2lS"/>
                         <segue destination="DxH-In-zlO" kind="relationship" relationship="viewControllers" id="56z-QD-GuK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39n-zC-Jc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-770" y="69"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ehc-Yg-Ek3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cuC-3H-jMt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="list-inactive" selectedImage="list-active" id="HMj-Vp-kep"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QCQ-Hc-1kH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Unr-cY-4GA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWb-Xf-hYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485.50724637681162" y="32.8125"/>
         </scene>
     </scenes>
     <resources>
