@@ -14,6 +14,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var pokemonImageView: UIImageView!
     
+    private let imageLoader = ImageLoaderImpl()
+    
     static func nib() -> UINib {
         UINib(nibName: "PokemonCollectionViewCell", bundle: nil)
     }
@@ -25,18 +27,15 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     func configure(with image: String) {
         guard let url = URL(string: image) else { return }
         
-        pokemonImageView.loadFromUrl(url: url) { [weak self] result in
+        imageLoader.getImageFromURL(url: url) { [weak self] result in
             switch result {
             case .loading(let isLoading):
-                DispatchQueue.main.async {
-                    self?.showShimmering(isLoading)
-                }
+                
+                self?.showShimmering(isLoading)
             case .success(let image):
-                DispatchQueue.main.async {
-                    self?.pokemonImageView.image = image
-                }
-            case .failure(let error):
-                print(error)
+                self?.pokemonImageView.image = image
+            case .failure:
+                self?.pokemonImageView.image = nil
             }
         }
     }
