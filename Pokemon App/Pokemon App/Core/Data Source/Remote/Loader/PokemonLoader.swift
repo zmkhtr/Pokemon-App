@@ -14,12 +14,6 @@ enum ListPokemonResult {
     case failure(String)
 }
 
-enum LoadingImageResult {
-    case loading(Bool)
-    case success(UIImage?)
-    case failure(String)
-}
-
 enum ListPokemonTypeResult {
     case loading(Bool)
     case success([PokemonType])
@@ -33,24 +27,34 @@ protocol PokemonLoader {
 
 class PokemonLoaderImpl : PokemonLoader {
     func getListPokemon(currentPage: Int = 1, pageSize: Int = 10, completion: @escaping (ListPokemonResult) -> ()) {
-        let url = URL(string: "https://api.pokemontcg.io/v2/cards?page=\(currentPage)&pageSize=\(pageSize)")!
+        let urlQueryItems  = [
+            URLQueryItem(name: "currentPage", value: "\(currentPage)"),
+            URLQueryItem(name: "pageSize", value: "\(pageSize)")
+        ]
+        var urlComponent = URLComponents(string: "https://api.pokemontcg.io/v2/cards")!
+        urlComponent.queryItems = urlQueryItems
+        let url = urlComponent.url!
         
         completion(.loading(true))
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let _ = self else { return }
+            
             DispatchQueue.main.async {
                 completion(.loading(false))
-                guard let data = data else {
-                    completion(.failure("Data not found"))
-                    return
-                }
                 
                 do {
-                    let result = try JSONDecoder().decode(ListPokemonResponse.self, from: data)
-                    let response = ObjectMapper().mapListPokemonResponseToListPokemonDomain(listPokemonResponse: result.data)
-                    completion(.success(response))
-                } catch {
-                    completion(.failure("Failed to convert"))
+                    if let data = data,
+                       let response = response as? HTTPURLResponse,
+                       response.statusCode == 200 {
+                        let result = try JSONDecoder().decode(ListPokemonResponse.self, from: data)
+                        let response = ObjectMapper.mapListPokemonResponseToListPokemonDomain(listPokemonResponse: result.data)
+                        completion(.success(response))
+                    } else {
+                        completion(.failure("Unexpected Data"))
+                    }
+                } catch let error {
+                    completion(.failure(error.localizedDescription))
                 }
             }
         }.resume()
@@ -61,20 +65,24 @@ class PokemonLoaderImpl : PokemonLoader {
         
         completion(.loading(true))
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let _ = self else { return }
+            
             DispatchQueue.main.async {
                 completion(.loading(false))
-                guard let data = data else {
-                    completion(.failure("Data not found"))
-                    return
-                }
                 
                 do {
-                    let result = try JSONDecoder().decode(ListPokemonTypeResponse.self, from: data)
-                    let response = ObjectMapper().mapListPokemonTypeResponseToListPokemonTypeDomain(listPokemonTypeResponse: result)
-                    completion(.success(response))
-                } catch {
-                    completion(.failure("Failed to convert"))
+                    if let data = data,
+                       let response = response as? HTTPURLResponse,
+                       response.statusCode == 200 {
+                        let result = try JSONDecoder().decode(ListPokemonTypeResponse.self, from: data)
+                        let response = ObjectMapper.mapListPokemonTypeResponseToListPokemonTypeDomain(listPokemonTypeResponse: result)
+                        completion(.success(response))
+                    } else {
+                        completion(.failure("Unexpected Data"))
+                    }
+                } catch let error {
+                    completion(.failure(error.localizedDescription))
                 }
             }
         }.resume()
