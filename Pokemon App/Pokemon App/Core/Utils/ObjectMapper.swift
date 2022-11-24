@@ -7,8 +7,8 @@
 
 import Foundation
 
-class ObjectMapper {
-    func mapListPokemonResponseToListPokemonDomain(listPokemonResponse: [PokemonResponse]) -> [Pokemon] {
+public final class ObjectMapper {
+    static func mapListPokemonResponseToListPokemonDomain(listPokemonResponse: [PokemonResponse]) -> [Pokemon] {
         listPokemonResponse.map { response in
             Pokemon(
                 id: response.id,

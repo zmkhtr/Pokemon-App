@@ -128,7 +128,7 @@ extension ListPokemonView : UICollectionViewDataSource {
 
 extension ListPokemonView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: estimateWidth(), height: estimateWidth() * 1.75)
+        CGSize(width: estimateWidth(), height: estimateWidth() * 1.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
