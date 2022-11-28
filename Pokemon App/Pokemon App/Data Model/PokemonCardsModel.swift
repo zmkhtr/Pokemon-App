@@ -6,11 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct PokemonCardsModel: Decodable {
-    let pokemonCards: [PokemonCards]
-}
-struct PokemonCards: Decodable {
+struct PokemonCards {
     let id: String
     let imageURL: String
     
@@ -19,7 +17,4 @@ struct PokemonCards: Decodable {
         self.imageURL = imageURL
     }
 }
-
-let sampleCard = PokemonCards(id: "pikachu", imageURL: "https://www.titancards.co.uk/image/data/blog/Jul_19/1_Pikachu_Card.jpg")
-
 

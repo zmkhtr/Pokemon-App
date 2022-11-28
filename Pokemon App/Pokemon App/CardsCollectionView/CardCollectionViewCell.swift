@@ -6,13 +6,39 @@
 //
 
 import UIKit
+enum CardImageResult {
+    case success(UIImage)
+    case failure(String)
+    
+}
 
 class CardCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var pokemonCard: UIImageView!
+    private var downloadTask: URLSessionDataTask?
+    
+    
+    @IBOutlet weak var pokemonCardImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    
+    func downloadPokemonCardImage(for url: URL) {
+        downloadTask = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let image = UIImage (data: data!) {
+                DispatchQueue.main.sync {
+                    self.pokemonCardImageView.image = image
+                }
+            } else {
+                print("Something went wrong.")
+            }
+        }
+        downloadTask?.resume()
+    }
+    func cancelDownloadImage() {
+        downloadTask?.suspend()
+        downloadTask = nil
+    }
+  
 }
