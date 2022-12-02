@@ -30,7 +30,7 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.searchController = searchController
+        settingSearchBar()
         setupCollectionView()
         getPokemonCardData()
         
@@ -62,9 +62,16 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-//MARK: Search Bar
-    
-    let searchController = UISearchController()
+//MARK: UISearchBar
+    func settingSearchBar () {
+        let whiteColor = UIColor.white.withAlphaComponent(0.6)
+        pokemonSearchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [.foregroundColor: whiteColor])
+        pokemonSearchBar.searchTextField.textColor = .white
+        let image = UIImage(systemName: "magnifyingglass")?.withTintColor(whiteColor, renderingMode: .alwaysOriginal)
+        UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+        navigationItem.titleView = pokemonSearchBar
+    }
+
 }
 //MARK: Networking
 extension CardListViewController {

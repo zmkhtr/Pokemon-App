@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +22,7 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T0f-Qk-C80"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                         <constraints>
                             <constraint firstItem="akG-JX-WpN" firstAttribute="top" secondItem="T0f-Qk-C80" secondAttribute="top" constant="30" id="1La-HX-HJy"/>
                             <constraint firstAttribute="trailing" secondItem="akG-JX-WpN" secondAttribute="trailing" id="DfG-p4-BlC"/>
@@ -46,7 +45,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="SecondaryColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="11" minimumInteritemSpacing="40" sectionInsetReference="layoutMargins" id="6P4-dp-dkF">
                                     <size key="itemSize" width="170" height="240"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -73,7 +72,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                         <constraints>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="NWt-5j-sH8"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="bottom" secondItem="uIU-CM-IYK" secondAttribute="bottom" id="bLe-sE-M8J"/>
@@ -167,8 +166,8 @@
         <namedColor name="#222831">
             <color red="0.13300000131130219" green="0.15700000524520874" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.22400000691413879" green="0.24300000071525574" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -17,6 +17,5 @@ class FavouritesViewController: UIViewController {
     
     //MARK: Search Bar
     
-    let searchController = UISearchController()
     
 }
