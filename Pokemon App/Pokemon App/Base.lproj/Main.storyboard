@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,21 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="fCu-mK-lPB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKz-fZ-jGS">
-                                <rect key="frame" x="0.0" y="99" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Favourites" id="r0G-d4-Y5e"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ghH-I2-zQw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="VKz-fZ-jGS" firstAttribute="trailing" secondItem="ghH-I2-zQw" secondAttribute="trailing" id="6ge-df-ahO"/>
-                            <constraint firstItem="VKz-fZ-jGS" firstAttribute="top" secondItem="ghH-I2-zQw" secondAttribute="top" constant="40" id="Vkz-5u-5Np"/>
-                            <constraint firstItem="VKz-fZ-jGS" firstAttribute="leading" secondItem="ghH-I2-zQw" secondAttribute="leading" id="XsW-IU-m9X"/>
-                        </constraints>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" selectedImage="heart.fill" id="bYK-RX-OIf"/>
                 </viewController>
@@ -47,9 +33,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Zoc-ed-uMG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="mXZ-Fw-gh0"/>
+                    <connections>
+                        <outlet property="cardListSearchBar" destination="Icc-R9-uqW" id="ZHd-iW-XOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9V-Bx-1pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <searchBar contentMode="redraw" id="Icc-R9-uqW">
@@ -112,8 +101,8 @@
         <namedColor name="PrimaryColor">
             <color red="0.13300000131130219" green="0.15700000524520874" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.22400000691413879" green="0.24300000071525574" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
