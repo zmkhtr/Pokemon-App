@@ -20,9 +20,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akG-JX-WpN">
                                 <rect key="frame" x="0.0" y="133" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Favourites" id="dhQ-OJ-08w"/>
-                                </items>
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T0f-Qk-C80"/>
