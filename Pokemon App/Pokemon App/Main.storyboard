@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GVl-yy-Lf3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FavoriteVC-->
+        <scene sceneID="v9I-KU-eRk">
+            <objects>
+                <viewController id="sCT-ez-6ib" customClass="FavoriteVC" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VLW-bS-8Hh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xMv-oT-dtO"/>
+                        <color key="backgroundColor" name="Color background"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="suit.heart" catalog="system" selectedImage="heart.fill" id="kDC-KZ-Nq6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XG7-7N-r5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239.130434782609" y="573.88392857142856"/>
+        </scene>
+        <!--Card ListVC-->
+        <scene sceneID="Mu0-kZ-5qM">
+            <objects>
+                <viewController id="W9b-YI-VWd" customClass="CardListVC" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lFA-gq-Vpm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1rb-3y-JOr"/>
+                        <color key="backgroundColor" name="Color background"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="greetingcard" catalog="system" selectedImage="greetingcard.fill" id="s3u-dh-vQA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FY2-f8-TzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239.130434782609" y="-447.32142857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="irR-gV-gTb">
+            <objects>
+                <tabBarController id="GVl-yy-Lf3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="sDA-cn-X74">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="Color TabBar"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="W9b-YI-VWd" kind="relationship" relationship="viewControllers" id="XcD-70-zEZ"/>
+                        <segue destination="sCT-ez-6ib" kind="relationship" relationship="viewControllers" id="ZQh-zQ-fdB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGl-di-1un" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="greetingcard" catalog="system" width="107" height="128"/>
+        <image name="greetingcard.fill" catalog="system" width="106" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <namedColor name="Color TabBar">
+            <color red="0.13333333333333333" green="0.15686274509803921" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color background">
+            <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
