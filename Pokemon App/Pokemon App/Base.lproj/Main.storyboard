@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ghH-I2-zQw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" selectedImage="heart.fill" id="bYK-RX-OIf"/>
                 </viewController>
@@ -33,14 +32,25 @@
                     <view key="view" contentMode="scaleToFill" id="VQp-pI-Cx7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="dXz-u8-NnR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Zoc-ed-uMG"/>
+                        <color key="backgroundColor" name="SecondaryColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="greetingcard" catalog="system" selectedImage="greetingcard.fill" id="oA6-4H-9uG" customClass="CardListController"/>
+                    <navigationItem key="navigationItem" id="mXZ-Fw-gh0"/>
+                    <connections>
+                        <outlet property="cardListSearchBar" destination="Icc-R9-uqW" id="ZHd-iW-XOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9V-Bx-1pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" id="Icc-R9-uqW">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="zpZ-S4-6LU" id="xpw-6A-Xn9"/>
+                    </connections>
+                </searchBar>
             </objects>
-            <point key="canvasLocation" x="2150" y="306"/>
+            <point key="canvasLocation" x="3075.5725190839694" y="305.63380281690144"/>
         </scene>
         <!--Pokemon Tab Bar Controller-->
         <scene sceneID="L2f-6l-1CT">
@@ -55,13 +65,32 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zpZ-S4-6LU" kind="relationship" relationship="viewControllers" id="vnA-Ur-Wb2"/>
+                        <segue destination="Lx3-zw-80o" kind="relationship" relationship="viewControllers" id="vnA-Ur-Wb2"/>
                         <segue destination="fHh-wD-k2y" kind="relationship" relationship="viewControllers" id="uCt-W0-DcY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCl-6o-qpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955" y="674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9h7-7q-PjS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lx3-zw-80o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="greetingcard" catalog="system" selectedImage="greetingcard.fill" id="oA6-4H-9uG" customClass="CardListController"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z9o-2Z-r59">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zpZ-S4-6LU" kind="relationship" relationship="rootViewController" id="NIf-ch-yWE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xk7-os-abo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148.8549618320608" y="305.63380281690144"/>
         </scene>
     </scenes>
     <resources>
@@ -72,8 +101,8 @@
         <namedColor name="PrimaryColor">
             <color red="0.13300000131130219" green="0.15700000524520874" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.22400000691413879" green="0.24300000071525574" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
