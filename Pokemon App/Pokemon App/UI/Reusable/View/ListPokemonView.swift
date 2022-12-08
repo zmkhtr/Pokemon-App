@@ -15,10 +15,10 @@ class ListPokemonView: UIView {
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
     
     private let minItemWidth: CGFloat = 170
-    private var listPokemon : [Pokemon] = []
+    private var listPokemon: [Pokemon] = []
     private var isPullToRefresh = false
     
-    var refreshData : (() -> Void)?
+    var refreshData: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,6 +125,18 @@ extension ListPokemonView : UICollectionViewDataSource {
         cell.configure(with: listPokemon[indexPath.row].images.small)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! PokemonCollectionViewCell
+        
+        cell.configure(with: listPokemon[indexPath.row].images.small)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! PokemonCollectionViewCell
+        
+        cell.cancelDownloadImage()
     }
 }
 

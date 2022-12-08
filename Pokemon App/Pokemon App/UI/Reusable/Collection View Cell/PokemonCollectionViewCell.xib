@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,11 +24,35 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-6j-7RE">
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
                             </imageView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yr8-ui-JaN">
+                                <rect key="frame" x="0.0" y="80" width="170" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2z-IC-zBs">
+                                        <rect key="frame" x="40.5" y="0.0" width="89" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufm-5H-Itd">
+                                        <rect key="frame" x="51" y="49" width="68.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Reload">
+                                            <color key="baseBackgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onRetryButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SDW-3j-wwl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Yr8-ui-JaN" firstAttribute="leading" secondItem="wkf-tX-qBd" secondAttribute="leading" id="0Ve-zR-5Ul"/>
+                            <constraint firstAttribute="trailing" secondItem="Yr8-ui-JaN" secondAttribute="trailing" id="YCI-M5-nfe"/>
                             <constraint firstAttribute="bottom" secondItem="18Z-6j-7RE" secondAttribute="bottom" id="Zip-Dr-tYo"/>
                             <constraint firstItem="18Z-6j-7RE" firstAttribute="leading" secondItem="wkf-tX-qBd" secondAttribute="leading" id="cdv-RF-qgy"/>
+                            <constraint firstItem="Yr8-ui-JaN" firstAttribute="centerY" secondItem="wkf-tX-qBd" secondAttribute="centerY" id="gH7-PJ-f47"/>
                             <constraint firstItem="18Z-6j-7RE" firstAttribute="top" secondItem="wkf-tX-qBd" secondAttribute="top" id="gLj-at-IN0"/>
                             <constraint firstAttribute="trailing" secondItem="18Z-6j-7RE" secondAttribute="trailing" id="vMT-MS-ef0"/>
                         </constraints>
@@ -46,6 +69,7 @@
             </constraints>
             <connections>
                 <outlet property="containerView" destination="wkf-tX-qBd" id="eT6-Qb-rLe"/>
+                <outlet property="errorStackView" destination="Yr8-ui-JaN" id="4rF-EF-Hm4"/>
                 <outlet property="pokemonImageView" destination="18Z-6j-7RE" id="Rvg-e6-sB8"/>
             </connections>
             <point key="canvasLocation" x="133" y="96"/>
@@ -55,8 +79,5 @@
         <namedColor name="MainBackgroundColor">
             <color red="0.22352941176470589" green="0.24313725490196078" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

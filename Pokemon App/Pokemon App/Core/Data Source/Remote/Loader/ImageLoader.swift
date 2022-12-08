@@ -18,8 +18,11 @@ protocol ImageLoader {
 }
 
 class ImageLoaderImpl: ImageLoader {
+    private var downloadTask: URLSessionDataTask?
+    
     func getImageFromURL(url: URL, completion: @escaping (LoadingImageResult) -> ()) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, _ in
+        
+        downloadTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, _ in
             guard let _ = self else { return }
             
             DispatchQueue.main.async {
@@ -39,6 +42,13 @@ class ImageLoaderImpl: ImageLoader {
                     
                 }
             }
-        }.resume()
+        }
+        
+        downloadTask?.resume()
+    }
+    
+    func cancelDownloadTask() {
+        downloadTask?.suspend()
+        downloadTask = nil
     }
 }
