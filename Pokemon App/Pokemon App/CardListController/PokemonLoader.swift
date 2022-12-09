@@ -13,7 +13,7 @@ enum PokemonResult {
 }
 
 class PokemonLoader {
-    //call API pokemon
+    //call API pokemonCards
     func getPokemonCardData (completion: @escaping (PokemonResult) -> Void) {
         let url = URL(string: "https://api.pokemontcg.io/v2/cards?pageSize=10")!
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in

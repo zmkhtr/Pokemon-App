@@ -15,13 +15,21 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.cardListCollectionView.reloadData()
         }
     }
+    var pokemonType: [PokemonCards] = [] {
+        didSet {
+            self.categorytypeCollectionView.reloadData()
+        }
+    }
+
     
     var loader = PokemonLoader()
     @IBOutlet var pokemonSearchBar: UISearchBar!
     @IBOutlet weak var cardListCollectionView: UICollectionView!
+    @IBOutlet weak var categorytypeCollectionView: CategoryTypeCollectionView!
     
     @IBOutlet weak var errorMessageLabel: UILabel!
     
+    @IBOutlet weak var pokemonCardReloadButton: UIButton!
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -31,8 +39,11 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         settingSearchBar()
-        setupCollectionView()
+        setUpCardListCollectionView()
         getPokemonCardData()
+        setUpPokemonTypeCollectionView()
+        loadPokemonType()
+        
         
     }
     //showErroLabel Method
@@ -51,6 +62,7 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
     func stopRefreshing() {
         refreshControl.endRefreshing()
     }
+//MARK: CollectionView for Card List
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listCard.count
     }
@@ -61,6 +73,7 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.downloadPokemonCardImage(for: URL(string: "\(cards.imageURL)")!)
         return cell
     }
+    
     
 //MARK: UISearchBar
     func settingSearchBar () {
@@ -95,14 +108,53 @@ extension CardListViewController {
             
         }
     }
-    //setup CollectionView
-    func setupCollectionView() {
+    //setUPCardListCollectionView
+    func setUpCardListCollectionView() {
         cardListCollectionView.delegate = self
         cardListCollectionView.dataSource = self
         //Register XIB dengan CardCollectionViewCell dan identifier XibPokemonCard
         self.cardListCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "XibPokemonCard")
         cardListCollectionView.refreshControl = refreshControl
     }
-    
+    //setUpPokemonTypeCollectionView
+    func setUpPokemonTypeCollectionView() {
+        categorytypeCollectionView.delegate = self
+        categorytypeCollectionView.dataSource = self
+        //Register XIB dengan CategoryTypeCollectionViewCell dan identifier XibPokemonType
+        self.categorytypeCollectionView.register(UINib(nibName: "CategoryTypeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "XibPokemonType")
+        categorytypeCollectionView.refreshControl = refreshControl
+    }
+    //MARK: CategoryOfPokemonType
+    private func loadPokemonType() {
+        let loader = CategoryTypeLoader()
+        startLoadPokemonType()
+        loader.getPokemonTypeData { result in
+            switch result {
+            case .success(let CategoryTypeResult):
+                self.successLoadCategories(with: CategoryTypeResult)
+            case .failure(let err):
+                self.failedToLoad(with: err.localizedDescription)
+            }
+        }
+    }
+    private func startLoadPokemonType() {
+        DispatchQueue.main.async {
+            self.errorMessageLabel.isHidden = true
+            self.pokemonCardReloadButton.isHidden = true
+        }
+    }
+    private func successLoadCategories(with pokemonTypeResult: [String]) {
+        DispatchQueue.main.async {
+            self.errorMessageLabel.isHidden = true
+            self.pokemonCardReloadButton.isHidden = true
+            self.categorytypeCollectionView.categoryTypes = pokemonTypeResult
+            self.categorytypeCollectionView.selectedType = pokemonTypeResult.count > 0 ?pokemonTypeResult.first! : " "
+            self.categorytypeCollectionView.reloadData()
+        }
+    }
+    private func failedToLoad(with err: String) {
+        self.errorMessageLabel.isHidden = false
+        self.pokemonCardReloadButton.isHidden = false
+    }
 }
 

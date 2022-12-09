@@ -10,6 +10,11 @@
 		5D09C09C291CDC0500EA5D8F /* PokemonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */; };
 		5D0EF503292E111E00523FB0 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0EF502292E111E00523FB0 /* UIView+Shimmering.swift */; };
 		5D3EBE9D29347AB200C0B884 /* CardListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3EBE9C29347AB200C0B884 /* CardListCollectionViewController.swift */; };
+		5D419ED9293EF6020006565D /* RemotePokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D419ED8293EF6020006565D /* RemotePokemonType.swift */; };
+		5D484E09293A119B00CADF7F /* CategoryTypeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D484E08293A119B00CADF7F /* CategoryTypeLoader.swift */; };
+		5D484E0B293A11CB00CADF7F /* CategoryTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D484E0A293A11CB00CADF7F /* CategoryTypeCollectionView.swift */; };
+		5D484E10293A120900CADF7F /* CategoryTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D484E0E293A120900CADF7F /* CategoryTypeCollectionViewCell.swift */; };
+		5D484E11293A120900CADF7F /* CategoryTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D484E0F293A120900CADF7F /* CategoryTypeCollectionViewCell.xib */; };
 		5D5D700B2923A2B000B7E630 /* RemotePokemonCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D700A2923A2B000B7E630 /* RemotePokemonCardsModel.swift */; };
 		5D5D700F2923A42C00B7E630 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D700D2923A42C00B7E630 /* CardCollectionViewCell.swift */; };
 		5D5D70102923A42C00B7E630 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D700E2923A42C00B7E630 /* CardCollectionViewCell.xib */; };
@@ -29,6 +34,11 @@
 		5D09C09B291CDC0500EA5D8F /* PokemonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabBarController.swift; sourceTree = "<group>"; };
 		5D0EF502292E111E00523FB0 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		5D3EBE9C29347AB200C0B884 /* CardListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewController.swift; sourceTree = "<group>"; };
+		5D419ED8293EF6020006565D /* RemotePokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePokemonType.swift; sourceTree = "<group>"; };
+		5D484E08293A119B00CADF7F /* CategoryTypeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTypeLoader.swift; sourceTree = "<group>"; };
+		5D484E0A293A11CB00CADF7F /* CategoryTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTypeCollectionView.swift; sourceTree = "<group>"; };
+		5D484E0E293A120900CADF7F /* CategoryTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D484E0F293A120900CADF7F /* CategoryTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5D5D700A2923A2B000B7E630 /* RemotePokemonCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePokemonCardsModel.swift; sourceTree = "<group>"; };
 		5D5D700D2923A42C00B7E630 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D5D700E2923A42C00B7E630 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -73,6 +83,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5D484E07293A117B00CADF7F /* CategoryTypeCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5D484E08293A119B00CADF7F /* CategoryTypeLoader.swift */,
+				5D484E0A293A11CB00CADF7F /* CategoryTypeCollectionView.swift */,
+			);
+			path = CategoryTypeCollectionView;
+			sourceTree = "<group>";
+		};
+		5D484E0D293A11E600CADF7F /* CategoryTypeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D484E0E293A120900CADF7F /* CategoryTypeCollectionViewCell.swift */,
+				5D484E0F293A120900CADF7F /* CategoryTypeCollectionViewCell.xib */,
+			);
+			path = CategoryTypeCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		5D5D700C2923A35A00B7E630 /* CardsCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +114,8 @@
 		5D8E8503291FAFD60081CFC2 /* CardListController */ = {
 			isa = PBXGroup;
 			children = (
-				5D8E8504291FB0070081CFC2 /* CardListViewController.swift */,
 				5D8E850C291FD7670081CFC2 /* PokemonLoader.swift */,
+				5D8E8504291FB0070081CFC2 /* CardListViewController.swift */,
 			);
 			path = CardListController;
 			sourceTree = "<group>";
@@ -105,6 +133,7 @@
 			children = (
 				5D8E850A291FD16C0081CFC2 /* PokemonCardsModel.swift */,
 				5D5D700A2923A2B000B7E630 /* RemotePokemonCardsModel.swift */,
+				5D419ED8293EF6020006565D /* RemotePokemonType.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -128,6 +157,8 @@
 		BF6745B62902DBB300B9818C /* Pokemon App */ = {
 			isa = PBXGroup;
 			children = (
+				5D484E0D293A11E600CADF7F /* CategoryTypeCollectionViewCell */,
+				5D484E07293A117B00CADF7F /* CategoryTypeCollectionView */,
 				5D0EF501292E110B00523FB0 /* Extension */,
 				5D5D700C2923A35A00B7E630 /* CardsCollectionView */,
 				5D8E8509291FD1570081CFC2 /* Data Model */,
@@ -206,6 +237,7 @@
 				BF6745C42902DBB400B9818C /* LaunchScreen.storyboard in Resources */,
 				BF6745C12902DBB400B9818C /* Assets.xcassets in Resources */,
 				BF6745BF2902DBB300B9818C /* Main.storyboard in Resources */,
+				5D484E11293A120900CADF7F /* CategoryTypeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +256,11 @@
 				5D8E8505291FB0070081CFC2 /* CardListViewController.swift in Sources */,
 				5D3EBE9D29347AB200C0B884 /* CardListCollectionViewController.swift in Sources */,
 				5D5D700B2923A2B000B7E630 /* RemotePokemonCardsModel.swift in Sources */,
+				5D484E0B293A11CB00CADF7F /* CategoryTypeCollectionView.swift in Sources */,
+				5D419ED9293EF6020006565D /* RemotePokemonType.swift in Sources */,
 				5D8E850D291FD7670081CFC2 /* PokemonLoader.swift in Sources */,
+				5D484E10293A120900CADF7F /* CategoryTypeCollectionViewCell.swift in Sources */,
+				5D484E09293A119B00CADF7F /* CategoryTypeLoader.swift in Sources */,
 				5D0EF503292E111E00523FB0 /* UIView+Shimmering.swift in Sources */,
 				5D5D700F2923A42C00B7E630 /* CardCollectionViewCell.swift in Sources */,
 				BF6745BA2902DBB300B9818C /* SceneDelegate.swift in Sources */,

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,51 +40,93 @@
         <scene sceneID="DDd-hC-VCD">
             <objects>
                 <viewController id="JS8-xY-Twe" customClass="CardListViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L9K-9D-Krg">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="L9K-9D-Krg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
+                                <rect key="frame" x="53" y="301" width="240" height="510"/>
                                 <color key="backgroundColor" name="SecondaryColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="11" minimumInteritemSpacing="40" sectionInsetReference="layoutMargins" id="6P4-dp-dkF">
-                                    <size key="itemSize" width="170" height="240"/>
+                                    <size key="itemSize" width="170" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something Went Wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xsz-Ii-jEd">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="510"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tgz-de-Aq9">
-                                        <rect key="frame" x="111.66666666666667" y="8" width="170" height="240"/>
+                                        <rect key="frame" x="35" y="8" width="170" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jxG-PQ-hun">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WFB-qW-Et1">
-                                <rect key="frame" x="0.0" y="88" width="393" height="592"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFb-O7-EXc" customClass="CategoryTypeCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="393" height="83"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="g8t-jh-DH7"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TXu-Oa-AfD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j0y-eI-fGl">
+                                        <rect key="frame" x="0.0" y="-22.666666666666668" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AQH-Qs-6aD">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c7-D5-rZf">
+                                <rect key="frame" x="53" y="577" width="250" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reload"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" name="SecondaryColor"/>
                         <constraints>
+                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="8qw-Y0-37X"/>
+                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="Efq-O3-t7V"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="NWt-5j-sH8"/>
+                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="Swf-ua-i2v"/>
+                            <constraint firstItem="uIU-CM-IYK" firstAttribute="bottom" secondItem="aFb-O7-EXc" secondAttribute="bottom" constant="700" id="TeM-om-E7o"/>
+                            <constraint firstItem="uIU-CM-IYK" firstAttribute="trailing" secondItem="7c7-D5-rZf" secondAttribute="trailing" constant="100" id="Wvj-4r-a4h"/>
+                            <constraint firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="YXN-VM-zgV"/>
+                            <constraint firstItem="aFb-O7-EXc" firstAttribute="top" secondItem="L9K-9D-Krg" secondAttribute="top" constant="110" id="Yz9-Dh-Q4C"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="bottom" secondItem="uIU-CM-IYK" secondAttribute="bottom" id="bLe-sE-M8J"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" id="ffG-ON-Lgn"/>
+                            <constraint firstItem="7c7-D5-rZf" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" constant="100" id="bMR-xj-7YS"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="hML-Lz-R5C"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="aFb-O7-EXc" secondAttribute="bottom" constant="10" id="me9-yh-Gts"/>
+                            <constraint firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="q2H-gu-I8w"/>
+                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="100" id="qzu-YZ-p8J"/>
+                            <constraint firstItem="uIU-CM-IYK" firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="wkB-VE-thF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
                     <connections>
                         <outlet property="cardListCollectionView" destination="hfb-Kp-l78" id="TBY-j5-MVd"/>
-                        <outlet property="errorMessageLabel" destination="WFB-qW-Et1" id="vR3-Wa-zU6"/>
+                        <outlet property="categoryTypeCollectionView" destination="aFb-O7-EXc" id="qpv-nd-MYw"/>
+                        <outlet property="categorytypeCollectionView" destination="aFb-O7-EXc" id="KqF-QY-pPM"/>
+                        <outlet property="errorMessageLabel" destination="Xsz-Ii-jEd" id="wYW-Zo-oac"/>
+                        <outlet property="pokemonCardReloadButton" destination="7c7-D5-rZf" id="LXX-FN-oMB"/>
                         <outlet property="pokemonSearchBar" destination="4TX-Sh-mQW" id="8lQ-D9-837"/>
                     </connections>
                 </viewController>
@@ -169,5 +212,8 @@
         <namedColor name="SecondaryColor">
             <color red="0.22400000691413879" green="0.24300000071525574" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
