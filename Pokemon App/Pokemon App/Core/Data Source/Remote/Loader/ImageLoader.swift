@@ -19,9 +19,15 @@ protocol ImageLoader {
 
 class ImageLoaderImpl: ImageLoader {
     private var downloadTask: URLSessionDataTask?
+    private var imageCache = NSCache<AnyObject, AnyObject>()
     
     func getImageFromURL(url: URL, completion: @escaping (LoadingImageResult) -> ()) {
-
+        
+        if let imageFromCache = imageCache.object(forKey: url.absoluteString as AnyObject) as? UIImage {
+            completion(.success(imageFromCache))
+            return
+        }
+        
         downloadTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, _ in
             guard let _ = self else { return }
             
@@ -33,6 +39,7 @@ class ImageLoaderImpl: ImageLoader {
                    response.statusCode == 200,
                    let newImage = UIImage(data: data) {
                     completion(.loading(false))
+                    self?.imageCache.setObject(newImage, forKey: url.absoluteString as AnyObject)
                     completion(.success(newImage))
                 } else {
                     completion(.loading(false))
