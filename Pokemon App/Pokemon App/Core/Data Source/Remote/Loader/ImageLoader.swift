@@ -21,7 +21,7 @@ class ImageLoaderImpl: ImageLoader {
     private var downloadTask: URLSessionDataTask?
     
     func getImageFromURL(url: URL, completion: @escaping (LoadingImageResult) -> ()) {
-        
+
         downloadTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, _ in
             guard let _ = self else { return }
             
@@ -30,16 +30,13 @@ class ImageLoaderImpl: ImageLoader {
                 
                 if let data = data,
                    let response = response as? HTTPURLResponse,
-                   response.statusCode == 200 {
+                   response.statusCode == 200,
+                   let newImage = UIImage(data: data) {
                     completion(.loading(false))
-                    
-                    let image = UIImage(data: data)
-                    completion(.success(image))
-                    
+                    completion(.success(newImage))
                 } else {
                     completion(.loading(false))
                     completion(.failure)
-                    
                 }
             }
         }

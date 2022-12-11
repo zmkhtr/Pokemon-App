@@ -17,6 +17,7 @@ class ListPokemonView: UIView {
     private let minItemWidth: CGFloat = 170
     private var listPokemon: [Pokemon] = []
     private var isPullToRefresh = false
+    private let imageLoader = ImageLoaderImpl()
     
     var refreshData: (() -> Void)?
     
@@ -69,6 +70,7 @@ private extension ListPokemonView {
     func configureCollectionView() {
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
+        pokemonCollectionView.prefetchDataSource = self
         pokemonCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         pokemonCollectionView.register(PokemonCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonCollectionViewCell.identifier)
         pokemonCollectionView.showsHorizontalScrollIndicator = false
@@ -108,13 +110,13 @@ private extension ListPokemonView {
     }
 }
 
-extension ListPokemonView : UICollectionViewDelegate {
+extension ListPokemonView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         pokemonCollectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
-extension ListPokemonView : UICollectionViewDataSource {
+extension ListPokemonView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listPokemon.count
     }
@@ -137,6 +139,22 @@ extension ListPokemonView : UICollectionViewDataSource {
         let cell = cell as! PokemonCollectionViewCell
         
         cell.cancelDownloadImage()
+    }
+}
+
+extension ListPokemonView: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let model = listPokemon[indexPath.row]
+            model.getImageFromUrl()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let model = listPokemon[indexPath.row]
+            model.cancelDownloadingImage()
+        }
     }
 }
 
@@ -165,3 +183,5 @@ extension ListPokemonView : UICollectionViewDelegateFlowLayout {
         return width
     }
 }
+
+
