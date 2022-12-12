@@ -33,7 +33,11 @@ class ListPokemonView: UIView {
         commonInit()
     }
     
-    func bindResult(_ result: ListPokemonResult, isSearching: Bool = false, searchedPokemon: String = "") {
+    func bindResult(_ result: ListPokemonResult,
+                    isSearching: Bool = false,
+                    isFiltering: Bool = false,
+                    searchedPokemon: String = ""
+    ) {
         switch result {
             
         case .loading(let isLoading):
@@ -45,7 +49,7 @@ class ListPokemonView: UIView {
                 return
             }
             
-            if isPullToRefresh || isSearching || searchedPokemon.isEmpty {
+            if isPullToRefresh || isSearching || searchedPokemon.isEmpty || isFiltering {
                 self.listPokemon = []
             }
             
@@ -102,7 +106,6 @@ private extension ListPokemonView {
     }
     
     func showLoading(_ isLoading: Bool) {
-        pokemonCollectionView.isHidden = true
         errorStackView.isHidden = true
         if isPullToRefresh {
             loadingIndicatorView.isHidden = true
