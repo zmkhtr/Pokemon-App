@@ -13,6 +13,8 @@ class ListPokemonView: UIView {
     @IBOutlet private weak var pokemonCollectionView: UICollectionView!
     @IBOutlet private weak var errorStackView: UIStackView!
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var reloadButton: UIButton!
     
     private let minItemWidth: CGFloat = 170
     private var listPokemon: [Pokemon] = []
@@ -31,16 +33,22 @@ class ListPokemonView: UIView {
         commonInit()
     }
     
-    func bindResult(_ result: ListPokemonResult) {
+    func bindResult(_ result: ListPokemonResult, isSearching: Bool = false, searchedPokemon: String = "") {
         switch result {
             
         case .loading(let isLoading):
             showLoading(isLoading)
             
         case .success(let listPokemon):
-            if isPullToRefresh {
+            if listPokemon.isEmpty {
+                searchedPokemonEmpty(searchedPokemon: searchedPokemon)
+                return
+            }
+            
+            if isPullToRefresh || isSearching || searchedPokemon.isEmpty {
                 self.listPokemon = []
             }
+            
             self.listPokemon.append(contentsOf: listPokemon)
             DispatchQueue.main.async {
                 self.isShowError(false)
@@ -89,9 +97,13 @@ private extension ListPokemonView {
     func isShowError(_ isError: Bool) {
         errorStackView.isHidden = !isError
         pokemonCollectionView.isHidden = isError
+        errorLabel.text = "Something went wrong"
+        reloadButton.isHidden = false
     }
     
     func showLoading(_ isLoading: Bool) {
+        pokemonCollectionView.isHidden = true
+        errorStackView.isHidden = true
         if isPullToRefresh {
             loadingIndicatorView.isHidden = true
             if isLoading {
@@ -107,6 +119,13 @@ private extension ListPokemonView {
                 loadingIndicatorView.stopAnimating()
             }
         }
+    }
+    
+    func searchedPokemonEmpty(searchedPokemon: String) {
+        errorLabel.text = "No data found for '\(searchedPokemon)'"
+        reloadButton.isHidden = true
+        errorStackView.isHidden = false
+        pokemonCollectionView.isHidden = true
     }
 }
 

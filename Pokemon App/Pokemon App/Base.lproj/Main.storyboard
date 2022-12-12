@@ -24,6 +24,24 @@
                                     <constraint firstAttribute="height" constant="50" id="Rwg-LW-FSG"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ja-Ig-rFJ" userLabel="Search Pokemon Query">
+                                <rect key="frame" x="0.0" y="138" width="414" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEP-mQ-qaN">
+                                        <rect key="frame" x="8" y="0.0" width="406" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="MainBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PEP-mQ-qaN" firstAttribute="top" secondItem="1Ja-Ig-rFJ" secondAttribute="top" id="77j-G0-28d"/>
+                                    <constraint firstAttribute="trailing" secondItem="PEP-mQ-qaN" secondAttribute="trailing" id="7GY-sq-qR8"/>
+                                    <constraint firstItem="PEP-mQ-qaN" firstAttribute="leading" secondItem="1Ja-Ig-rFJ" secondAttribute="leading" constant="8" id="SYe-qd-KgY"/>
+                                    <constraint firstAttribute="bottom" secondItem="PEP-mQ-qaN" secondAttribute="bottom" id="uJb-hW-U3d"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XZ-lp-74n" customClass="ListPokemonView" customModule="Pokemon_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="138" width="414" height="675"/>
                                 <color key="backgroundColor" name="MainBackgroundColor"/>
@@ -34,7 +52,11 @@
                         <constraints>
                             <constraint firstItem="Y6T-wX-vUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8XS-k3-1rL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6T-wX-vUy" secondAttribute="trailing" id="CQD-JX-9k1"/>
+                            <constraint firstItem="1Ja-Ig-rFJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CcO-eZ-ZLz"/>
+                            <constraint firstItem="7XZ-lp-74n" firstAttribute="top" secondItem="1Ja-Ig-rFJ" secondAttribute="bottom" priority="500" id="EiE-eU-uv5"/>
+                            <constraint firstItem="1Ja-Ig-rFJ" firstAttribute="top" secondItem="Y6T-wX-vUy" secondAttribute="bottom" id="IHR-2x-vdB"/>
                             <constraint firstItem="Y6T-wX-vUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SNX-GL-7Gv"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ja-Ig-rFJ" secondAttribute="trailing" id="cdZ-sM-RNq"/>
                             <constraint firstItem="7XZ-lp-74n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e0P-py-XPZ"/>
                             <constraint firstItem="7XZ-lp-74n" firstAttribute="top" secondItem="Y6T-wX-vUy" secondAttribute="bottom" id="hTb-Kj-bJH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7XZ-lp-74n" secondAttribute="trailing" id="lG8-SX-kYW"/>
@@ -45,7 +67,10 @@
                     <connections>
                         <outlet property="listPokemonTypeView" destination="Y6T-wX-vUy" id="Etj-4d-fSV"/>
                         <outlet property="listPokemonView" destination="7XZ-lp-74n" id="X3M-Hz-Scm"/>
+                        <outlet property="pokemonNameLabel" destination="PEP-mQ-qaN" id="oWs-Xv-aUt"/>
                         <outlet property="pokemonSearchBar" destination="cc9-cF-WXM" id="f3h-lk-yHp"/>
+                        <outlet property="pokemonViewToPokemonTypeViewConstraint" destination="hTb-Kj-bJH" id="5To-BZ-EyW"/>
+                        <outlet property="pokemonViewToSearchPokemonQueryViewConstraint" destination="EiE-eU-uv5" id="kEx-uQ-2LM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
