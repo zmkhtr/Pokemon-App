@@ -15,8 +15,10 @@ class ListPokemonTypeView: UIView {
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
     
     private var listPokemonType: [PokemonType] = []
+    private var isTypeSelected = false
     
-    var tapToRetry : (() -> Void)?
+    var tapToRetry: (() -> Void)?
+    var tapPokemonType: ((String) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +44,25 @@ class ListPokemonTypeView: UIView {
             
         case .failure(_):
             isShowError(true)
+        }
+    }
+    
+    func resetListPokemonType() {
+        if !isTypeSelected {
+            return
+        }
+        
+        for (index, var pokemonType) in listPokemonType.enumerated() {
+            if pokemonType.isFavorite {
+                pokemonType.isFavorite = false
+                listPokemonType[index] = pokemonType
+            }
+        }
+        
+        isTypeSelected = false
+        
+        DispatchQueue.main.async {
+            self.pokemonTypeCollectionView.reloadData()
         }
     }
 }
@@ -109,6 +130,8 @@ private extension ListPokemonTypeView {
 extension ListPokemonTypeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         updateCollectionViewCell(index: indexPath.row)
+        tapPokemonType?(listPokemonType[indexPath.row].title)
+        isTypeSelected = true
     }
 }
 

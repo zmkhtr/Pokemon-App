@@ -10,9 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListPokemonView" customModule="Pokemon_App" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="KBF-y0-g30" id="28j-2U-GBW"/>
+                <outlet property="errorLabel" destination="z6u-Pg-aJR" id="5F4-6n-jJB"/>
                 <outlet property="errorStackView" destination="M7P-5H-eNb" id="FYj-oc-ATm"/>
                 <outlet property="loadingIndicatorView" destination="VHj-fZ-YCi" id="Tic-Au-yvU"/>
                 <outlet property="pokemonCollectionView" destination="pg7-Vm-iRy" id="Xa9-ue-NMY"/>
+                <outlet property="reloadButton" destination="hZB-dx-CDv" id="Had-PZ-vUK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,7 +38,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6u-Pg-aJR">
                             <rect key="frame" x="103.5" y="0.0" width="175.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZB-dx-CDv">

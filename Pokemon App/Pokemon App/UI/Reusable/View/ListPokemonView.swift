@@ -13,12 +13,15 @@ class ListPokemonView: UIView {
     @IBOutlet private weak var pokemonCollectionView: UICollectionView!
     @IBOutlet private weak var errorStackView: UIStackView!
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var reloadButton: UIButton!
     
     private let minItemWidth: CGFloat = 170
-    private var listPokemon : [Pokemon] = []
+    private var listPokemon: [Pokemon] = []
     private var isPullToRefresh = false
+    private let imageLoader = ImageLoaderImpl()
     
-    var refreshData : (() -> Void)?
+    var refreshData: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,16 +33,26 @@ class ListPokemonView: UIView {
         commonInit()
     }
     
-    func bindResult(_ result: ListPokemonResult) {
+    func bindResult(_ result: ListPokemonResult,
+                    isSearching: Bool = false,
+                    isFiltering: Bool = false,
+                    searchedPokemon: String = ""
+    ) {
         switch result {
             
         case .loading(let isLoading):
             showLoading(isLoading)
             
         case .success(let listPokemon):
-            if isPullToRefresh {
+            if listPokemon.isEmpty {
+                searchedPokemonEmpty(searchedPokemon: searchedPokemon)
+                return
+            }
+            
+            if isPullToRefresh || isSearching || searchedPokemon.isEmpty || isFiltering {
                 self.listPokemon = []
             }
+            
             self.listPokemon.append(contentsOf: listPokemon)
             DispatchQueue.main.async {
                 self.isShowError(false)
@@ -69,6 +82,7 @@ private extension ListPokemonView {
     func configureCollectionView() {
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
+        pokemonCollectionView.prefetchDataSource = self
         pokemonCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         pokemonCollectionView.register(PokemonCollectionViewCell.nib(), forCellWithReuseIdentifier: PokemonCollectionViewCell.identifier)
         pokemonCollectionView.showsHorizontalScrollIndicator = false
@@ -87,9 +101,12 @@ private extension ListPokemonView {
     func isShowError(_ isError: Bool) {
         errorStackView.isHidden = !isError
         pokemonCollectionView.isHidden = isError
+        errorLabel.text = "Something went wrong"
+        reloadButton.isHidden = false
     }
     
     func showLoading(_ isLoading: Bool) {
+        errorStackView.isHidden = true
         if isPullToRefresh {
             loadingIndicatorView.isHidden = true
             if isLoading {
@@ -106,15 +123,22 @@ private extension ListPokemonView {
             }
         }
     }
+    
+    func searchedPokemonEmpty(searchedPokemon: String) {
+        errorLabel.text = "No data found for '\(searchedPokemon)'"
+        reloadButton.isHidden = true
+        errorStackView.isHidden = false
+        pokemonCollectionView.isHidden = true
+    }
 }
 
-extension ListPokemonView : UICollectionViewDelegate {
+extension ListPokemonView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         pokemonCollectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
-extension ListPokemonView : UICollectionViewDataSource {
+extension ListPokemonView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listPokemon.count
     }
@@ -125,6 +149,34 @@ extension ListPokemonView : UICollectionViewDataSource {
         cell.configure(with: listPokemon[indexPath.row].images.small)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! PokemonCollectionViewCell
+        
+        cell.configure(with: listPokemon[indexPath.row].images.small)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! PokemonCollectionViewCell
+        
+        cell.cancelDownloadImage()
+    }
+}
+
+extension ListPokemonView: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let model = listPokemon[indexPath.row]
+            model.getImageFromUrl()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let model = listPokemon[indexPath.row]
+            model.cancelDownloadingImage()
+        }
     }
 }
 
@@ -153,3 +205,5 @@ extension ListPokemonView : UICollectionViewDelegateFlowLayout {
         return width
     }
 }
+
+

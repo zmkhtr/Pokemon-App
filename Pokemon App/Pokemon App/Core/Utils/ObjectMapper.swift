@@ -16,7 +16,8 @@ public final class ObjectMapper {
                 images: PokemonImages(
                     small: response.images.small,
                     large: response.images.large
-                )
+                ),
+                image: nil
             )
         }
     }
